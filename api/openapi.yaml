@@ -1,0 +1,4678 @@
+openapi: 3.0.1
+info:
+  contact:
+    email: info@gemini-commerce.com
+    name: Gemini Team
+  license:
+    name: Gemini fair use license
+    url: https://gemini-commerce.com/api/fair-use-license
+  title: Cart Service
+  version: 1.0.0
+servers:
+- url: https://cart.api.gogemini.io/
+security:
+- Authorization: []
+tags:
+- description: Search Description
+  externalDocs:
+    url: https://gemini-commerce.com/api/cart
+  name: Cart
+paths:
+  /cart.Cart/AddProducts:
+    post:
+      description: "This endpoint allows you to add products to a shopping cart. The\
+        \ AddProducts method enables you to specify the tenantId and cartId to identify\
+        \ the target shopping cart, and provide a list of items to be added."
+      operationId: AddProducts
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/cartAddProductsRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/cartAddProductsResponse'
+          description: OK
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An internal error occurred is thrown when an incompatible payload
+            is sent
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      summary: Add Products
+      tags:
+      - Basic Operations
+      x-codegen-request-body-name: body
+  /cart.Cart/ApplyCoupons:
+    post:
+      description: Apply coupons to the cart
+      operationId: ApplyCoupons
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/cartApplyCouponsRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/cartApplyCouponsResponse'
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: Bad Request
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An internal error occurred is thrown when an incompatible payload
+            is sent
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      summary: Apply Coupons
+      tags:
+      - Promotions
+      x-codegen-request-body-name: body
+  /cart.Cart/CreateCart:
+    post:
+      description: "The CreateCart endpoint allows users to create a new cart for\
+        \ their shopping session. By making a request to this endpoint, users can\
+        \ initiate a new cart and obtain a unique identifier for future cart operations.\
+        \ This endpoint enables seamless cart management and provides a foundation\
+        \ for adding products and performing checkout operations."
+      operationId: CreateCart
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/cartCreateCartRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/cartCreateCartResponse'
+          description: OK
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An internal error occurred is thrown when an incompatible payload
+            is sent
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      summary: Create Cart
+      tags:
+      - Basic Operations
+      x-codegen-request-body-name: body
+  /cart.Cart/GetActiveCartByCustomer:
+    post:
+      description: Get the active cart by customer
+      operationId: GetActiveCartByCustomer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/cartGetActiveCartByCustomerRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/cartGetActiveCartByCustomerResponse'
+          description: OK
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An internal error occurred is thrown when an incompatible payload
+            is sent
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      summary: Get Active Cart By Customer
+      tags:
+      - Basic Operations
+      x-codegen-request-body-name: body
+  /cart.Cart/GetCart:
+    post:
+      description: Get the cart
+      operationId: GetCart
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/cartGetCartRequest'
+        description: Get cart request
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/cartGetCartResponse'
+          description: OK
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An internal error occurred is thrown when an incompatible payload
+            is sent
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      summary: Get Cart
+      tags:
+      - Basic Operations
+      x-codegen-request-body-name: body
+  /cart.Cart/ListCarts:
+    post:
+      description: List all carts
+      operationId: ListCarts
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/cartListCartsRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/cartListCartsResponse'
+          description: OK
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An internal error occurred is thrown when an incompatible payload
+            is sent
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      summary: List Carts
+      tags:
+      - Basic Operations
+      x-codegen-request-body-name: body
+  /cart.Cart/ListPaymentMethods:
+    post:
+      description: List payment methods
+      operationId: ListPaymentMethods
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/cartListPaymentMethodsRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/cartListPaymentMethodsResponse'
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: Bad Request
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: Not Found
+        "409":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: Conflict
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An internal error occurred is thrown when an incompatible payload
+            is sent
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      summary: List Payment Methods
+      tags:
+      - Payments
+      x-codegen-request-body-name: body
+  /cart.Cart/ListShipmentMethods:
+    post:
+      description: List shipment methods
+      operationId: ListShipmentMethods
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/cartListShipmentMethodsRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/cartListShipmentMethodsResponse'
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: Bad Request
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: Not Found
+        "409":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: Conflict
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An internal error occurred is thrown when an incompatible payload
+            is sent
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      summary: List Shipment Methods
+      tags:
+      - Shipments
+      x-codegen-request-body-name: body
+  /cart.Cart/MergeCarts:
+    post:
+      description: Merge carts
+      operationId: MergeCarts
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/cartMergeCartsRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/cartMergeCartsResponse'
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: Bad Request
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An internal error occurred is thrown when an incompatible payload
+            is sent
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      summary: Merge Carts
+      tags:
+      - Basic Operations
+      x-codegen-request-body-name: body
+  /cart.Cart/RemoveCoupons:
+    post:
+      description: Remove coupons from the cart
+      operationId: RemoveCoupons
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/cartRemoveCouponsRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/cartRemoveCouponsResponse'
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: Bad Request
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An internal error occurred is thrown when an incompatible payload
+            is sent
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      summary: Remove Coupons
+      tags:
+      - Promotions
+      x-codegen-request-body-name: body
+  /cart.Cart/RemoveProducts:
+    post:
+      description: Remove products from the cart
+      operationId: RemoveProducts
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/cartRemoveProductsRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/cartRemoveProductsResponse'
+          description: OK
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An internal error occurred is thrown when an incompatible payload
+            is sent
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      summary: Remove Products
+      tags:
+      - Basic Operations
+      x-codegen-request-body-name: body
+  /cart.Cart/SetAdditionalInfo:
+    post:
+      description: Set additional info
+      operationId: SetAdditionalInfo
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/cartSetAdditionalInfoRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/cartSetAdditionalInfoResponse'
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: Bad Request
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: Not Found
+        "409":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: Conflict
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An internal error occurred is thrown when an incompatible payload
+            is sent
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      summary: Set Additional Info
+      tags:
+      - Basic Operations
+      x-codegen-request-body-name: body
+  /cart.Cart/SetBillingAddress:
+    post:
+      description: Set billing address
+      operationId: SetBillingAddress
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/cartSetBillingAddressRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/cartSetBillingAddressResponse'
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: Bad Request
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: Not Found
+        "409":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: Conflict
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An internal error occurred is thrown when an incompatible payload
+            is sent
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      summary: Set Billing Address
+      tags:
+      - Addresses
+      x-codegen-request-body-name: body
+  /cart.Cart/SetCustomPriceOnItems:
+    post:
+      operationId: Cart_SetCustomPriceOnItems
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/cartSetCustomPriceOnItemsRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/cartSetCustomPriceOnItemsResponse'
+          description: A successful response.
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      tags:
+      - Cart
+      x-codegen-request-body-name: body
+  /cart.Cart/SetNotes:
+    post:
+      description: Set notes
+      operationId: SetNotes
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/cartSetNotesRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/cartSetNotesResponse'
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: Bad Request
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: Not Found
+        "409":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: Conflict
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An internal error occurred is thrown when an incompatible payload
+            is sent
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      summary: Set Notes
+      tags:
+      - Basic Operations
+      x-codegen-request-body-name: body
+  /cart.Cart/SetPayments:
+    post:
+      description: Set SetPayments
+      operationId: SetSetPayments
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/cartSetPaymentsRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/cartSetPaymentsResponse'
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: Bad Request
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An internal error occurred is thrown when an incompatible payload
+            is sent
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      summary: Set SetPayments
+      tags:
+      - Payments
+      x-codegen-request-body-name: body
+  /cart.Cart/SetShipmentAddress:
+    post:
+      description: Set shipment address
+      operationId: SetShipmentAddress
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/cartSetShipmentAddressRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/cartSetShipmentAddressResponse'
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: Bad Request
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: Not Found
+        "409":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: Conflict
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An internal error occurred is thrown when an incompatible payload
+            is sent
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      summary: Set Shipment Address
+      tags:
+      - Addresses
+      x-codegen-request-body-name: body
+  /cart.Cart/SetShipments:
+    post:
+      description: Set shipments
+      operationId: SetShipments
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/cartSetShipmentsRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/cartSetShipmentsResponse'
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: Bad Request
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An internal error occurred is thrown when an incompatible payload
+            is sent
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      summary: Set Shipments
+      tags:
+      - Shipments
+      x-codegen-request-body-name: body
+  /cart.Cart/TriggerRealignment:
+    post:
+      description: Trigger realignment
+      operationId: TriggerRealignment
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/cartTriggerRealignmentRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/cartTriggerRealignmentResponse'
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: Bad Request
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: Not Found
+        "409":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: Conflict
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An internal error occurred is thrown when an incompatible payload
+            is sent
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      summary: Trigger Realignment
+      tags:
+      - Basic Operations
+      x-codegen-request-body-name: body
+  /cart.Cart/UpdateCart:
+    post:
+      description: Update the cart
+      operationId: UpdateCart
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/cartUpdateCartRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/cartUpdateCartResponse'
+          description: OK
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An internal error occurred is thrown when an incompatible payload
+            is sent
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      summary: Update Cart
+      tags:
+      - Basic Operations
+      x-codegen-request-body-name: body
+  /cart.Cart/UpdateProducts:
+    post:
+      description: Update products in the cart
+      operationId: UpdateProducts
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/cartUpdateProductsRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/cartUpdateProductsResponse'
+          description: OK
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An internal error occurred is thrown when an incompatible payload
+            is sent
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      summary: Update Products
+      tags:
+      - Basic Operations
+      x-codegen-request-body-name: body
+components:
+  schemas:
+    CartSubtotalCode:
+      default: UNKNOWN
+      enum:
+      - UNKNOWN
+      - PAYMENT
+      - SHIPMENT
+      - TAX
+      - ITEMS
+      - DISCOUNT
+      type: string
+    ListCartsRequestFilter:
+      properties:
+        searchTerms:
+          items:
+            type: string
+          title: |-
+            search_terms is the search terms to be applied on the list of returns. This will be applied on the same field as the filters
+            in exception of the cart_status which will always be applied in AND
+          type: array
+        customerEmails:
+          items:
+            type: string
+          type: array
+        customerFirstnames:
+          items:
+            type: string
+          type: array
+        customerLastnames:
+          items:
+            type: string
+          type: array
+        customerPhones:
+          items:
+            type: string
+          type: array
+        cartIds:
+          items:
+            type: string
+          type: array
+        cartStatus:
+          $ref: '#/components/schemas/ListCartsRequestFilterCartStatus'
+        createdAt:
+          items:
+            $ref: '#/components/schemas/ListCartsRequestFilterDate'
+          type: array
+        agentGrn:
+          type: string
+      type: object
+    ListCartsRequestFilterCartStatus:
+      default: UNKNOWN
+      enum:
+      - UNKNOWN
+      - ENABLED
+      - DISABLED
+      type: string
+    ListCartsRequestFilterDate:
+      properties:
+        from:
+          format: date-time
+          type: string
+        to:
+          format: date-time
+          type: string
+      type: object
+    ListCartsRequestSort:
+      properties:
+        evaluationOrder:
+          description: "evaluation_order is the order in which the sort will be applied.\
+            \ The lower the number, the earlier the sort will be applied."
+          format: int64
+          type: integer
+        field:
+          $ref: '#/components/schemas/SortSortField'
+        order:
+          $ref: '#/components/schemas/cartSortOrder'
+      type: object
+    OptionImage:
+      example:
+        grn: grn
+        url: url
+      properties:
+        grn:
+          type: string
+        url:
+          type: string
+      type: object
+    SortSortField:
+      default: UNKNOWN
+      enum:
+      - UNKNOWN
+      - DATE
+      - CART_TOTAL
+      type: string
+    UpdateCartRequestPayload:
+      properties:
+        cartStatus:
+          $ref: '#/components/schemas/cartCartStatus'
+        customerData:
+          $ref: '#/components/schemas/cartCustomerData'
+        locale:
+          type: string
+      type: object
+    cartAddProductsRequest:
+      properties:
+        tenantId:
+          type: string
+        cartId:
+          type: string
+        items:
+          items:
+            $ref: '#/components/schemas/cartAddProductsRequestItem'
+          type: array
+      type: object
+    cartAddProductsRequestItem:
+      properties:
+        productGrn:
+          type: string
+        quantity:
+          format: int64
+          type: integer
+        configurationSelections:
+          items:
+            $ref: '#/components/schemas/cartProductConfigurationSelection'
+          type: array
+      type: object
+    cartAddProductsResponse:
+      example:
+        items:
+        - configurationSelections:
+          - stepGrn: stepGrn
+            options:
+            - grn: grn
+              quantity: 6
+            - grn: grn
+              quantity: 6
+          - stepGrn: stepGrn
+            options:
+            - grn: grn
+              quantity: 6
+            - grn: grn
+              quantity: 6
+          quantity: 0
+          productGrn: productGrn
+          id: id
+        - configurationSelections:
+          - stepGrn: stepGrn
+            options:
+            - grn: grn
+              quantity: 6
+            - grn: grn
+              quantity: 6
+          - stepGrn: stepGrn
+            options:
+            - grn: grn
+              quantity: 6
+            - grn: grn
+              quantity: 6
+          quantity: 0
+          productGrn: productGrn
+          id: id
+      properties:
+        items:
+          items:
+            $ref: '#/components/schemas/cartAddProductsResponseItem'
+          title: must returns only the added items
+          type: array
+      type: object
+    cartAddProductsResponseItem:
+      example:
+        configurationSelections:
+        - stepGrn: stepGrn
+          options:
+          - grn: grn
+            quantity: 6
+          - grn: grn
+            quantity: 6
+        - stepGrn: stepGrn
+          options:
+          - grn: grn
+            quantity: 6
+          - grn: grn
+            quantity: 6
+        quantity: 0
+        productGrn: productGrn
+        id: id
+      properties:
+        id:
+          type: string
+        productGrn:
+          type: string
+        quantity:
+          format: int64
+          type: integer
+        configurationSelections:
+          items:
+            $ref: '#/components/schemas/cartProductConfigurationSelection'
+          type: array
+      type: object
+    cartApplyCouponsRequest:
+      properties:
+        tenantId:
+          type: string
+        cartId:
+          type: string
+        couponCodes:
+          items:
+            type: string
+          type: array
+      type: object
+    cartApplyCouponsResponse:
+      type: object
+    cartCartData:
+      example:
+        subtotals:
+        - code: null
+          value:
+            micros: 0
+            units: units
+        - code: null
+          value:
+            micros: 0
+            units: units
+        grn: grn
+        notes: notes
+        payments:
+        - amount:
+            micros: 0
+            units: units
+          code: code
+          payload: payload
+          vatPercentage: 2.302136
+          fee:
+            micros: 0
+            units: units
+          description:
+            value:
+              key: value
+          label:
+            value:
+              key: value
+          title:
+            value:
+              key: value
+          vatInaccurate: true
+          vatCalculated: true
+          vatAmount:
+            micros: 0
+            units: units
+          isUpfront: true
+        - amount:
+            micros: 0
+            units: units
+          code: code
+          payload: payload
+          vatPercentage: 2.302136
+          fee:
+            micros: 0
+            units: units
+          description:
+            value:
+              key: value
+          label:
+            value:
+              key: value
+          title:
+            value:
+              key: value
+          vatInaccurate: true
+          vatCalculated: true
+          vatAmount:
+            micros: 0
+            units: units
+          isUpfront: true
+        totalDue:
+          micros: 0
+          units: units
+        channel: channel
+        locale: locale
+        shipments:
+        - code: code
+          method: method
+          cartItemIds:
+          - cartItemIds
+          - cartItemIds
+          shipmentGrn: shipmentGrn
+          payload: payload
+          vatPercentage: 7.0614014
+          fee:
+            micros: 0
+            units: units
+          label: label
+          vatInaccurate: true
+          vatCalculated: true
+          vatAmount:
+            micros: 0
+            units: units
+        - code: code
+          method: method
+          cartItemIds:
+          - cartItemIds
+          - cartItemIds
+          shipmentGrn: shipmentGrn
+          payload: payload
+          vatPercentage: 7.0614014
+          fee:
+            micros: 0
+            units: units
+          label: label
+          vatInaccurate: true
+          vatCalculated: true
+          vatAmount:
+            micros: 0
+            units: units
+        market: market
+        createdAt: 2000-01-23T04:56:07.000+00:00
+        promotions:
+        - cartItemIds:
+          - cartItemIds
+          - cartItemIds
+          payload: payload
+          vatPercentage: 9.301444
+          name: name
+          description: description
+          discount:
+            micros: 0
+            units: units
+          promotionGrn: promotionGrn
+          type: type
+          couponCode: couponCode
+          vatInaccurate: true
+          vatCalculated: true
+          vatAmount:
+            micros: 0
+            units: units
+        - cartItemIds:
+          - cartItemIds
+          - cartItemIds
+          payload: payload
+          vatPercentage: 9.301444
+          name: name
+          description: description
+          discount:
+            micros: 0
+            units: units
+          promotionGrn: promotionGrn
+          type: type
+          couponCode: couponCode
+          vatInaccurate: true
+          vatCalculated: true
+          vatAmount:
+            micros: 0
+            units: units
+        total:
+          micros: 0
+          units: units
+        vatIncluded: true
+        shippingAddress:
+          postalCode: postalCode
+          locality: locality
+          sublocality: sublocality
+          languageCode: languageCode
+          administrativeArea: administrativeArea
+          revision: 3
+          regionCode: regionCode
+          phoneNumber: phoneNumber
+          sortingCode: sortingCode
+          recipients:
+          - recipients
+          - recipients
+          organization: organization
+          additionalInfo: "{}"
+          addressLines:
+          - addressLines
+          - addressLines
+        currency: null
+        id: id
+        billingAddress:
+          postalCode: postalCode
+          locality: locality
+          sublocality: sublocality
+          languageCode: languageCode
+          administrativeArea: administrativeArea
+          revision: 3
+          regionCode: regionCode
+          phoneNumber: phoneNumber
+          sortingCode: sortingCode
+          recipients:
+          - recipients
+          - recipients
+          organization: organization
+          additionalInfo: "{}"
+          addressLines:
+          - addressLines
+          - addressLines
+        items:
+        - customPrice:
+            price:
+              micros: 0
+              units: units
+            previousPrice:
+              micros: 0
+              units: units
+          localizedName:
+            key: localizedName
+          quantity: 5
+          productGrn: productGrn
+          discount:
+            micros: 0
+            units: units
+          productData: productData
+          promotionGrns:
+          - promotionGrns
+          - promotionGrns
+          imageGrn: imageGrn
+          vatCalculated: true
+          vatAmount:
+            micros: 0
+            units: units
+          productSku: productSku
+          productCode: productCode
+          variantOptions: variantOptions
+          price:
+            micros: 0
+            units: units
+          vatPercentage: 5.637377
+          productConfiguration:
+          - grn: grn
+            options:
+            - image:
+                grn: grn
+                url: url
+              grn: grn
+              priceVariation:
+                micros: 0
+                units: units
+              quantity: 1
+              hasQuantity: true
+              id: id
+              label:
+                value:
+                  key: value
+              weightVariation: 6.0274563
+            - image:
+                grn: grn
+                url: url
+              grn: grn
+              priceVariation:
+                micros: 0
+                units: units
+              quantity: 1
+              hasQuantity: true
+              id: id
+              label:
+                value:
+                  key: value
+              weightVariation: 6.0274563
+            description:
+              value:
+                key: value
+            id: id
+            label:
+              value:
+                key: value
+          - grn: grn
+            options:
+            - image:
+                grn: grn
+                url: url
+              grn: grn
+              priceVariation:
+                micros: 0
+                units: units
+              quantity: 1
+              hasQuantity: true
+              id: id
+              label:
+                value:
+                  key: value
+              weightVariation: 6.0274563
+            - image:
+                grn: grn
+                url: url
+              grn: grn
+              priceVariation:
+                micros: 0
+                units: units
+              quantity: 1
+              hasQuantity: true
+              id: id
+              label:
+                value:
+                  key: value
+              weightVariation: 6.0274563
+            description:
+              value:
+                key: value
+            id: id
+            label:
+              value:
+                key: value
+          additionalInfo: additionalInfo
+          id: id
+          isVirtual: true
+          vatInaccurate: true
+          listPrice:
+            micros: 0
+            units: units
+          basePrice:
+            micros: 0
+            units: units
+        - customPrice:
+            price:
+              micros: 0
+              units: units
+            previousPrice:
+              micros: 0
+              units: units
+          localizedName:
+            key: localizedName
+          quantity: 5
+          productGrn: productGrn
+          discount:
+            micros: 0
+            units: units
+          productData: productData
+          promotionGrns:
+          - promotionGrns
+          - promotionGrns
+          imageGrn: imageGrn
+          vatCalculated: true
+          vatAmount:
+            micros: 0
+            units: units
+          productSku: productSku
+          productCode: productCode
+          variantOptions: variantOptions
+          price:
+            micros: 0
+            units: units
+          vatPercentage: 5.637377
+          productConfiguration:
+          - grn: grn
+            options:
+            - image:
+                grn: grn
+                url: url
+              grn: grn
+              priceVariation:
+                micros: 0
+                units: units
+              quantity: 1
+              hasQuantity: true
+              id: id
+              label:
+                value:
+                  key: value
+              weightVariation: 6.0274563
+            - image:
+                grn: grn
+                url: url
+              grn: grn
+              priceVariation:
+                micros: 0
+                units: units
+              quantity: 1
+              hasQuantity: true
+              id: id
+              label:
+                value:
+                  key: value
+              weightVariation: 6.0274563
+            description:
+              value:
+                key: value
+            id: id
+            label:
+              value:
+                key: value
+          - grn: grn
+            options:
+            - image:
+                grn: grn
+                url: url
+              grn: grn
+              priceVariation:
+                micros: 0
+                units: units
+              quantity: 1
+              hasQuantity: true
+              id: id
+              label:
+                value:
+                  key: value
+              weightVariation: 6.0274563
+            - image:
+                grn: grn
+                url: url
+              grn: grn
+              priceVariation:
+                micros: 0
+                units: units
+              quantity: 1
+              hasQuantity: true
+              id: id
+              label:
+                value:
+                  key: value
+              weightVariation: 6.0274563
+            description:
+              value:
+                key: value
+            id: id
+            label:
+              value:
+                key: value
+          additionalInfo: additionalInfo
+          id: id
+          isVirtual: true
+          vatInaccurate: true
+          listPrice:
+            micros: 0
+            units: units
+          basePrice:
+            micros: 0
+            units: units
+        status: null
+        customer:
+          firstname: firstname
+          phoneNumber: phoneNumber
+          customerGrn: customerGrn
+          fiscalCode: fiscalCode
+          companyName: companyName
+          groups:
+          - groups
+          - groups
+          taxCode: taxCode
+          sdiCode: sdiCode
+          email: email
+          certifiedEmail: certifiedEmail
+          lastname: lastname
+          agentGrn: agentGrn
+        updatedAt: 2000-01-23T04:56:07.000+00:00
+      properties:
+        id:
+          type: string
+        grn:
+          title: "Gemini Resource Name, eg: grn:dom:cart::58119a68-9498-11ec-b909-0242ac120002"
+          type: string
+        channel:
+          type: string
+        market:
+          type: string
+        locale:
+          type: string
+        items:
+          items:
+            $ref: '#/components/schemas/cartCartItem'
+          type: array
+        payments:
+          items:
+            $ref: '#/components/schemas/cartPaymentData'
+          type: array
+        shipments:
+          items:
+            $ref: '#/components/schemas/cartShipmentData'
+          type: array
+        promotions:
+          items:
+            $ref: '#/components/schemas/cartPromotionData'
+          type: array
+        currency:
+          $ref: '#/components/schemas/cartCurrency'
+        subtotals:
+          items:
+            $ref: '#/components/schemas/cartCartSubtotal'
+          type: array
+        total:
+          $ref: '#/components/schemas/cartMoney'
+        totalDue:
+          $ref: '#/components/schemas/cartMoney'
+        vatIncluded:
+          title: is set by tenant settings
+          type: boolean
+        billingAddress:
+          $ref: '#/components/schemas/cartPostalAddress'
+        shippingAddress:
+          $ref: '#/components/schemas/cartPostalAddress'
+        status:
+          $ref: '#/components/schemas/cartCartStatus'
+        customer:
+          $ref: '#/components/schemas/cartCustomerData'
+        notes:
+          title: customer notes on checkout
+          type: string
+        createdAt:
+          format: date-time
+          type: string
+        updatedAt:
+          format: date-time
+          type: string
+      type: object
+    cartCartItem:
+      example:
+        customPrice:
+          price:
+            micros: 0
+            units: units
+          previousPrice:
+            micros: 0
+            units: units
+        localizedName:
+          key: localizedName
+        quantity: 5
+        productGrn: productGrn
+        discount:
+          micros: 0
+          units: units
+        productData: productData
+        promotionGrns:
+        - promotionGrns
+        - promotionGrns
+        imageGrn: imageGrn
+        vatCalculated: true
+        vatAmount:
+          micros: 0
+          units: units
+        productSku: productSku
+        productCode: productCode
+        variantOptions: variantOptions
+        price:
+          micros: 0
+          units: units
+        vatPercentage: 5.637377
+        productConfiguration:
+        - grn: grn
+          options:
+          - image:
+              grn: grn
+              url: url
+            grn: grn
+            priceVariation:
+              micros: 0
+              units: units
+            quantity: 1
+            hasQuantity: true
+            id: id
+            label:
+              value:
+                key: value
+            weightVariation: 6.0274563
+          - image:
+              grn: grn
+              url: url
+            grn: grn
+            priceVariation:
+              micros: 0
+              units: units
+            quantity: 1
+            hasQuantity: true
+            id: id
+            label:
+              value:
+                key: value
+            weightVariation: 6.0274563
+          description:
+            value:
+              key: value
+          id: id
+          label:
+            value:
+              key: value
+        - grn: grn
+          options:
+          - image:
+              grn: grn
+              url: url
+            grn: grn
+            priceVariation:
+              micros: 0
+              units: units
+            quantity: 1
+            hasQuantity: true
+            id: id
+            label:
+              value:
+                key: value
+            weightVariation: 6.0274563
+          - image:
+              grn: grn
+              url: url
+            grn: grn
+            priceVariation:
+              micros: 0
+              units: units
+            quantity: 1
+            hasQuantity: true
+            id: id
+            label:
+              value:
+                key: value
+            weightVariation: 6.0274563
+          description:
+            value:
+              key: value
+          id: id
+          label:
+            value:
+              key: value
+        additionalInfo: additionalInfo
+        id: id
+        isVirtual: true
+        vatInaccurate: true
+        listPrice:
+          micros: 0
+          units: units
+        basePrice:
+          micros: 0
+          units: units
+      properties:
+        id:
+          type: string
+        productGrn:
+          type: string
+        productConfiguration:
+          items:
+            $ref: '#/components/schemas/cartProductConfigurationStep'
+          type: array
+        quantity:
+          format: int64
+          type: integer
+        price:
+          $ref: '#/components/schemas/cartMoney'
+        listPrice:
+          $ref: '#/components/schemas/cartMoney'
+        discount:
+          $ref: '#/components/schemas/cartMoney'
+        basePrice:
+          $ref: '#/components/schemas/cartMoney'
+        customPrice:
+          $ref: '#/components/schemas/cartItemCustomPrice'
+        vatAmount:
+          $ref: '#/components/schemas/cartMoney'
+        vatPercentage:
+          format: float
+          title: The VAT percentage to show (not to be used for calculation)
+          type: number
+        vatInaccurate:
+          title: Is set to true if the VAT percentage is inaccurate (fallback with
+            BaseCalculator)
+          type: boolean
+        vatCalculated:
+          title: Is set to true if the VAT is calculated
+          type: boolean
+        localizedName:
+          additionalProperties:
+            type: string
+          type: object
+        productCode:
+          type: string
+        productSku:
+          type: string
+        imageGrn:
+          type: string
+        variantOptions:
+          type: string
+        isVirtual:
+          type: boolean
+        promotionGrns:
+          items:
+            type: string
+          title: List of promotion GRNs applied to the item
+          type: array
+        additionalInfo:
+          type: string
+        productData:
+          type: string
+      type: object
+    cartCartStatus:
+      default: UNKNOWN
+      enum:
+      - UNKNOWN
+      - ACTIVE
+      - INACTIVE
+      type: string
+    cartCartSubtotal:
+      example:
+        code: null
+        value:
+          micros: 0
+          units: units
+      properties:
+        code:
+          $ref: '#/components/schemas/CartSubtotalCode'
+        value:
+          $ref: '#/components/schemas/cartMoney'
+      type: object
+    cartCreateCartRequest:
+      properties:
+        tenantId:
+          type: string
+        channel:
+          type: string
+        market:
+          type: string
+        locale:
+          type: string
+        customerGrn:
+          title: optional
+          type: string
+        currency:
+          $ref: '#/components/schemas/cartCurrency'
+      type: object
+    cartCreateCartResponse:
+      example:
+        id: id
+      properties:
+        id:
+          type: string
+      type: object
+    cartCurrency:
+      default: XXX
+      description: "Stands for Albania, not all ;-)"
+      enum:
+      - XXX
+      - ALL
+      - DZD
+      - ARS
+      - AUD
+      - BSD
+      - BHD
+      - BDT
+      - AMD
+      - BBD
+      - BMD
+      - BTN
+      - BOB
+      - BWP
+      - BZD
+      - SBD
+      - BND
+      - MMK
+      - BIF
+      - KHR
+      - CAD
+      - CVE
+      - KYD
+      - LKR
+      - CLP
+      - CNY
+      - COP
+      - KMF
+      - CRC
+      - HRK
+      - CUP
+      - CZK
+      - DKK
+      - DOP
+      - SVC
+      - ETB
+      - ERN
+      - FKP
+      - FJD
+      - DJF
+      - GMD
+      - GIP
+      - GTQ
+      - GNF
+      - GYD
+      - HTG
+      - HNL
+      - HKD
+      - HUF
+      - ISK
+      - INR
+      - IDR
+      - IRR
+      - IQD
+      - ILS
+      - JMD
+      - JPY
+      - KZT
+      - JOD
+      - KES
+      - KPW
+      - KRW
+      - KWD
+      - KGS
+      - LAK
+      - LBP
+      - LSL
+      - LRD
+      - LYD
+      - LTL
+      - MOP
+      - MWK
+      - MYR
+      - MVR
+      - MRO
+      - MUR
+      - MXN
+      - MNT
+      - MDL
+      - MAD
+      - OMR
+      - NAD
+      - NPR
+      - ANG
+      - AWG
+      - VUV
+      - NZD
+      - NIO
+      - NGN
+      - NOK
+      - PKR
+      - PAB
+      - PGK
+      - PYG
+      - PEN
+      - PHP
+      - QAR
+      - RUB
+      - RWF
+      - SHP
+      - STD
+      - SAR
+      - SCR
+      - SLL
+      - SGD
+      - VND
+      - SOS
+      - ZAR
+      - SSP
+      - SZL
+      - SEK
+      - CHF
+      - SYP
+      - THB
+      - TOP
+      - TTD
+      - AED
+      - TND
+      - UGX
+      - MKD
+      - EGP
+      - GBP
+      - TZS
+      - USD
+      - UYU
+      - UZS
+      - WST
+      - YER
+      - TWD
+      - CUC
+      - ZWL
+      - TMT
+      - GHS
+      - VEF
+      - SDG
+      - UYI
+      - RSD
+      - MZN
+      - AZN
+      - RON
+      - CHE
+      - CHW
+      - TRY
+      - XAF
+      - XCD
+      - XOF
+      - XPF
+      - XBA
+      - XBB
+      - XBC
+      - XBD
+      - XAU
+      - XDR
+      - XAG
+      - XPT
+      - XPD
+      - XUA
+      - ZMW
+      - SRD
+      - MGA
+      - COU
+      - AFN
+      - TJS
+      - AOA
+      - BYR
+      - BGN
+      - CDF
+      - BAM
+      - EUR
+      - MXV
+      - UAH
+      - GEL
+      - BOV
+      - PLN
+      - BRL
+      - CLF
+      - XSU
+      - USN
+      title: |-
+        - XXX: XXX = 999; //Changed to 0 because proto3 requires the default to be 0
+         - ALL: XTS = 963; //Codes specifically reserved for testing purposes
+      type: string
+    cartCustomerData:
+      example:
+        firstname: firstname
+        phoneNumber: phoneNumber
+        customerGrn: customerGrn
+        fiscalCode: fiscalCode
+        companyName: companyName
+        groups:
+        - groups
+        - groups
+        taxCode: taxCode
+        sdiCode: sdiCode
+        email: email
+        certifiedEmail: certifiedEmail
+        lastname: lastname
+        agentGrn: agentGrn
+      properties:
+        customerGrn:
+          title: optional
+          type: string
+        firstname:
+          type: string
+        lastname:
+          type: string
+        email:
+          type: string
+        phoneNumber:
+          type: string
+        groups:
+          items:
+            type: string
+          type: array
+        taxCode:
+          type: string
+        certifiedEmail:
+          type: string
+        sdiCode:
+          type: string
+        fiscalCode:
+          type: string
+        companyName:
+          type: string
+        agentGrn:
+          type: string
+      type: object
+    cartGetActiveCartByCustomerRequest:
+      properties:
+        tenantId:
+          type: string
+        customerGrn:
+          type: string
+        channel:
+          type: string
+        market:
+          type: string
+        currency:
+          $ref: '#/components/schemas/cartCurrency'
+      type: object
+    cartGetActiveCartByCustomerResponse:
+      example:
+        cart:
+          subtotals:
+          - code: null
+            value:
+              micros: 0
+              units: units
+          - code: null
+            value:
+              micros: 0
+              units: units
+          grn: grn
+          notes: notes
+          payments:
+          - amount:
+              micros: 0
+              units: units
+            code: code
+            payload: payload
+            vatPercentage: 2.302136
+            fee:
+              micros: 0
+              units: units
+            description:
+              value:
+                key: value
+            label:
+              value:
+                key: value
+            title:
+              value:
+                key: value
+            vatInaccurate: true
+            vatCalculated: true
+            vatAmount:
+              micros: 0
+              units: units
+            isUpfront: true
+          - amount:
+              micros: 0
+              units: units
+            code: code
+            payload: payload
+            vatPercentage: 2.302136
+            fee:
+              micros: 0
+              units: units
+            description:
+              value:
+                key: value
+            label:
+              value:
+                key: value
+            title:
+              value:
+                key: value
+            vatInaccurate: true
+            vatCalculated: true
+            vatAmount:
+              micros: 0
+              units: units
+            isUpfront: true
+          totalDue:
+            micros: 0
+            units: units
+          channel: channel
+          locale: locale
+          shipments:
+          - code: code
+            method: method
+            cartItemIds:
+            - cartItemIds
+            - cartItemIds
+            shipmentGrn: shipmentGrn
+            payload: payload
+            vatPercentage: 7.0614014
+            fee:
+              micros: 0
+              units: units
+            label: label
+            vatInaccurate: true
+            vatCalculated: true
+            vatAmount:
+              micros: 0
+              units: units
+          - code: code
+            method: method
+            cartItemIds:
+            - cartItemIds
+            - cartItemIds
+            shipmentGrn: shipmentGrn
+            payload: payload
+            vatPercentage: 7.0614014
+            fee:
+              micros: 0
+              units: units
+            label: label
+            vatInaccurate: true
+            vatCalculated: true
+            vatAmount:
+              micros: 0
+              units: units
+          market: market
+          createdAt: 2000-01-23T04:56:07.000+00:00
+          promotions:
+          - cartItemIds:
+            - cartItemIds
+            - cartItemIds
+            payload: payload
+            vatPercentage: 9.301444
+            name: name
+            description: description
+            discount:
+              micros: 0
+              units: units
+            promotionGrn: promotionGrn
+            type: type
+            couponCode: couponCode
+            vatInaccurate: true
+            vatCalculated: true
+            vatAmount:
+              micros: 0
+              units: units
+          - cartItemIds:
+            - cartItemIds
+            - cartItemIds
+            payload: payload
+            vatPercentage: 9.301444
+            name: name
+            description: description
+            discount:
+              micros: 0
+              units: units
+            promotionGrn: promotionGrn
+            type: type
+            couponCode: couponCode
+            vatInaccurate: true
+            vatCalculated: true
+            vatAmount:
+              micros: 0
+              units: units
+          total:
+            micros: 0
+            units: units
+          vatIncluded: true
+          shippingAddress:
+            postalCode: postalCode
+            locality: locality
+            sublocality: sublocality
+            languageCode: languageCode
+            administrativeArea: administrativeArea
+            revision: 3
+            regionCode: regionCode
+            phoneNumber: phoneNumber
+            sortingCode: sortingCode
+            recipients:
+            - recipients
+            - recipients
+            organization: organization
+            additionalInfo: "{}"
+            addressLines:
+            - addressLines
+            - addressLines
+          currency: null
+          id: id
+          billingAddress:
+            postalCode: postalCode
+            locality: locality
+            sublocality: sublocality
+            languageCode: languageCode
+            administrativeArea: administrativeArea
+            revision: 3
+            regionCode: regionCode
+            phoneNumber: phoneNumber
+            sortingCode: sortingCode
+            recipients:
+            - recipients
+            - recipients
+            organization: organization
+            additionalInfo: "{}"
+            addressLines:
+            - addressLines
+            - addressLines
+          items:
+          - customPrice:
+              price:
+                micros: 0
+                units: units
+              previousPrice:
+                micros: 0
+                units: units
+            localizedName:
+              key: localizedName
+            quantity: 5
+            productGrn: productGrn
+            discount:
+              micros: 0
+              units: units
+            productData: productData
+            promotionGrns:
+            - promotionGrns
+            - promotionGrns
+            imageGrn: imageGrn
+            vatCalculated: true
+            vatAmount:
+              micros: 0
+              units: units
+            productSku: productSku
+            productCode: productCode
+            variantOptions: variantOptions
+            price:
+              micros: 0
+              units: units
+            vatPercentage: 5.637377
+            productConfiguration:
+            - grn: grn
+              options:
+              - image:
+                  grn: grn
+                  url: url
+                grn: grn
+                priceVariation:
+                  micros: 0
+                  units: units
+                quantity: 1
+                hasQuantity: true
+                id: id
+                label:
+                  value:
+                    key: value
+                weightVariation: 6.0274563
+              - image:
+                  grn: grn
+                  url: url
+                grn: grn
+                priceVariation:
+                  micros: 0
+                  units: units
+                quantity: 1
+                hasQuantity: true
+                id: id
+                label:
+                  value:
+                    key: value
+                weightVariation: 6.0274563
+              description:
+                value:
+                  key: value
+              id: id
+              label:
+                value:
+                  key: value
+            - grn: grn
+              options:
+              - image:
+                  grn: grn
+                  url: url
+                grn: grn
+                priceVariation:
+                  micros: 0
+                  units: units
+                quantity: 1
+                hasQuantity: true
+                id: id
+                label:
+                  value:
+                    key: value
+                weightVariation: 6.0274563
+              - image:
+                  grn: grn
+                  url: url
+                grn: grn
+                priceVariation:
+                  micros: 0
+                  units: units
+                quantity: 1
+                hasQuantity: true
+                id: id
+                label:
+                  value:
+                    key: value
+                weightVariation: 6.0274563
+              description:
+                value:
+                  key: value
+              id: id
+              label:
+                value:
+                  key: value
+            additionalInfo: additionalInfo
+            id: id
+            isVirtual: true
+            vatInaccurate: true
+            listPrice:
+              micros: 0
+              units: units
+            basePrice:
+              micros: 0
+              units: units
+          - customPrice:
+              price:
+                micros: 0
+                units: units
+              previousPrice:
+                micros: 0
+                units: units
+            localizedName:
+              key: localizedName
+            quantity: 5
+            productGrn: productGrn
+            discount:
+              micros: 0
+              units: units
+            productData: productData
+            promotionGrns:
+            - promotionGrns
+            - promotionGrns
+            imageGrn: imageGrn
+            vatCalculated: true
+            vatAmount:
+              micros: 0
+              units: units
+            productSku: productSku
+            productCode: productCode
+            variantOptions: variantOptions
+            price:
+              micros: 0
+              units: units
+            vatPercentage: 5.637377
+            productConfiguration:
+            - grn: grn
+              options:
+              - image:
+                  grn: grn
+                  url: url
+                grn: grn
+                priceVariation:
+                  micros: 0
+                  units: units
+                quantity: 1
+                hasQuantity: true
+                id: id
+                label:
+                  value:
+                    key: value
+                weightVariation: 6.0274563
+              - image:
+                  grn: grn
+                  url: url
+                grn: grn
+                priceVariation:
+                  micros: 0
+                  units: units
+                quantity: 1
+                hasQuantity: true
+                id: id
+                label:
+                  value:
+                    key: value
+                weightVariation: 6.0274563
+              description:
+                value:
+                  key: value
+              id: id
+              label:
+                value:
+                  key: value
+            - grn: grn
+              options:
+              - image:
+                  grn: grn
+                  url: url
+                grn: grn
+                priceVariation:
+                  micros: 0
+                  units: units
+                quantity: 1
+                hasQuantity: true
+                id: id
+                label:
+                  value:
+                    key: value
+                weightVariation: 6.0274563
+              - image:
+                  grn: grn
+                  url: url
+                grn: grn
+                priceVariation:
+                  micros: 0
+                  units: units
+                quantity: 1
+                hasQuantity: true
+                id: id
+                label:
+                  value:
+                    key: value
+                weightVariation: 6.0274563
+              description:
+                value:
+                  key: value
+              id: id
+              label:
+                value:
+                  key: value
+            additionalInfo: additionalInfo
+            id: id
+            isVirtual: true
+            vatInaccurate: true
+            listPrice:
+              micros: 0
+              units: units
+            basePrice:
+              micros: 0
+              units: units
+          status: null
+          customer:
+            firstname: firstname
+            phoneNumber: phoneNumber
+            customerGrn: customerGrn
+            fiscalCode: fiscalCode
+            companyName: companyName
+            groups:
+            - groups
+            - groups
+            taxCode: taxCode
+            sdiCode: sdiCode
+            email: email
+            certifiedEmail: certifiedEmail
+            lastname: lastname
+            agentGrn: agentGrn
+          updatedAt: 2000-01-23T04:56:07.000+00:00
+      properties:
+        cart:
+          $ref: '#/components/schemas/cartCartData'
+      type: object
+    cartGetCartRequest:
+      description: Get cart request
+      properties:
+        tenantId:
+          description: The unique identifier for the tenant associated with the shopping
+            cart.
+          pattern: "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+          title: Tenant ID
+          type: string
+        cartId:
+          type: string
+      title: Get Cart Request
+      type: object
+    cartGetCartResponse:
+      example:
+        cart:
+          subtotals:
+          - code: null
+            value:
+              micros: 0
+              units: units
+          - code: null
+            value:
+              micros: 0
+              units: units
+          grn: grn
+          notes: notes
+          payments:
+          - amount:
+              micros: 0
+              units: units
+            code: code
+            payload: payload
+            vatPercentage: 2.302136
+            fee:
+              micros: 0
+              units: units
+            description:
+              value:
+                key: value
+            label:
+              value:
+                key: value
+            title:
+              value:
+                key: value
+            vatInaccurate: true
+            vatCalculated: true
+            vatAmount:
+              micros: 0
+              units: units
+            isUpfront: true
+          - amount:
+              micros: 0
+              units: units
+            code: code
+            payload: payload
+            vatPercentage: 2.302136
+            fee:
+              micros: 0
+              units: units
+            description:
+              value:
+                key: value
+            label:
+              value:
+                key: value
+            title:
+              value:
+                key: value
+            vatInaccurate: true
+            vatCalculated: true
+            vatAmount:
+              micros: 0
+              units: units
+            isUpfront: true
+          totalDue:
+            micros: 0
+            units: units
+          channel: channel
+          locale: locale
+          shipments:
+          - code: code
+            method: method
+            cartItemIds:
+            - cartItemIds
+            - cartItemIds
+            shipmentGrn: shipmentGrn
+            payload: payload
+            vatPercentage: 7.0614014
+            fee:
+              micros: 0
+              units: units
+            label: label
+            vatInaccurate: true
+            vatCalculated: true
+            vatAmount:
+              micros: 0
+              units: units
+          - code: code
+            method: method
+            cartItemIds:
+            - cartItemIds
+            - cartItemIds
+            shipmentGrn: shipmentGrn
+            payload: payload
+            vatPercentage: 7.0614014
+            fee:
+              micros: 0
+              units: units
+            label: label
+            vatInaccurate: true
+            vatCalculated: true
+            vatAmount:
+              micros: 0
+              units: units
+          market: market
+          createdAt: 2000-01-23T04:56:07.000+00:00
+          promotions:
+          - cartItemIds:
+            - cartItemIds
+            - cartItemIds
+            payload: payload
+            vatPercentage: 9.301444
+            name: name
+            description: description
+            discount:
+              micros: 0
+              units: units
+            promotionGrn: promotionGrn
+            type: type
+            couponCode: couponCode
+            vatInaccurate: true
+            vatCalculated: true
+            vatAmount:
+              micros: 0
+              units: units
+          - cartItemIds:
+            - cartItemIds
+            - cartItemIds
+            payload: payload
+            vatPercentage: 9.301444
+            name: name
+            description: description
+            discount:
+              micros: 0
+              units: units
+            promotionGrn: promotionGrn
+            type: type
+            couponCode: couponCode
+            vatInaccurate: true
+            vatCalculated: true
+            vatAmount:
+              micros: 0
+              units: units
+          total:
+            micros: 0
+            units: units
+          vatIncluded: true
+          shippingAddress:
+            postalCode: postalCode
+            locality: locality
+            sublocality: sublocality
+            languageCode: languageCode
+            administrativeArea: administrativeArea
+            revision: 3
+            regionCode: regionCode
+            phoneNumber: phoneNumber
+            sortingCode: sortingCode
+            recipients:
+            - recipients
+            - recipients
+            organization: organization
+            additionalInfo: "{}"
+            addressLines:
+            - addressLines
+            - addressLines
+          currency: null
+          id: id
+          billingAddress:
+            postalCode: postalCode
+            locality: locality
+            sublocality: sublocality
+            languageCode: languageCode
+            administrativeArea: administrativeArea
+            revision: 3
+            regionCode: regionCode
+            phoneNumber: phoneNumber
+            sortingCode: sortingCode
+            recipients:
+            - recipients
+            - recipients
+            organization: organization
+            additionalInfo: "{}"
+            addressLines:
+            - addressLines
+            - addressLines
+          items:
+          - customPrice:
+              price:
+                micros: 0
+                units: units
+              previousPrice:
+                micros: 0
+                units: units
+            localizedName:
+              key: localizedName
+            quantity: 5
+            productGrn: productGrn
+            discount:
+              micros: 0
+              units: units
+            productData: productData
+            promotionGrns:
+            - promotionGrns
+            - promotionGrns
+            imageGrn: imageGrn
+            vatCalculated: true
+            vatAmount:
+              micros: 0
+              units: units
+            productSku: productSku
+            productCode: productCode
+            variantOptions: variantOptions
+            price:
+              micros: 0
+              units: units
+            vatPercentage: 5.637377
+            productConfiguration:
+            - grn: grn
+              options:
+              - image:
+                  grn: grn
+                  url: url
+                grn: grn
+                priceVariation:
+                  micros: 0
+                  units: units
+                quantity: 1
+                hasQuantity: true
+                id: id
+                label:
+                  value:
+                    key: value
+                weightVariation: 6.0274563
+              - image:
+                  grn: grn
+                  url: url
+                grn: grn
+                priceVariation:
+                  micros: 0
+                  units: units
+                quantity: 1
+                hasQuantity: true
+                id: id
+                label:
+                  value:
+                    key: value
+                weightVariation: 6.0274563
+              description:
+                value:
+                  key: value
+              id: id
+              label:
+                value:
+                  key: value
+            - grn: grn
+              options:
+              - image:
+                  grn: grn
+                  url: url
+                grn: grn
+                priceVariation:
+                  micros: 0
+                  units: units
+                quantity: 1
+                hasQuantity: true
+                id: id
+                label:
+                  value:
+                    key: value
+                weightVariation: 6.0274563
+              - image:
+                  grn: grn
+                  url: url
+                grn: grn
+                priceVariation:
+                  micros: 0
+                  units: units
+                quantity: 1
+                hasQuantity: true
+                id: id
+                label:
+                  value:
+                    key: value
+                weightVariation: 6.0274563
+              description:
+                value:
+                  key: value
+              id: id
+              label:
+                value:
+                  key: value
+            additionalInfo: additionalInfo
+            id: id
+            isVirtual: true
+            vatInaccurate: true
+            listPrice:
+              micros: 0
+              units: units
+            basePrice:
+              micros: 0
+              units: units
+          - customPrice:
+              price:
+                micros: 0
+                units: units
+              previousPrice:
+                micros: 0
+                units: units
+            localizedName:
+              key: localizedName
+            quantity: 5
+            productGrn: productGrn
+            discount:
+              micros: 0
+              units: units
+            productData: productData
+            promotionGrns:
+            - promotionGrns
+            - promotionGrns
+            imageGrn: imageGrn
+            vatCalculated: true
+            vatAmount:
+              micros: 0
+              units: units
+            productSku: productSku
+            productCode: productCode
+            variantOptions: variantOptions
+            price:
+              micros: 0
+              units: units
+            vatPercentage: 5.637377
+            productConfiguration:
+            - grn: grn
+              options:
+              - image:
+                  grn: grn
+                  url: url
+                grn: grn
+                priceVariation:
+                  micros: 0
+                  units: units
+                quantity: 1
+                hasQuantity: true
+                id: id
+                label:
+                  value:
+                    key: value
+                weightVariation: 6.0274563
+              - image:
+                  grn: grn
+                  url: url
+                grn: grn
+                priceVariation:
+                  micros: 0
+                  units: units
+                quantity: 1
+                hasQuantity: true
+                id: id
+                label:
+                  value:
+                    key: value
+                weightVariation: 6.0274563
+              description:
+                value:
+                  key: value
+              id: id
+              label:
+                value:
+                  key: value
+            - grn: grn
+              options:
+              - image:
+                  grn: grn
+                  url: url
+                grn: grn
+                priceVariation:
+                  micros: 0
+                  units: units
+                quantity: 1
+                hasQuantity: true
+                id: id
+                label:
+                  value:
+                    key: value
+                weightVariation: 6.0274563
+              - image:
+                  grn: grn
+                  url: url
+                grn: grn
+                priceVariation:
+                  micros: 0
+                  units: units
+                quantity: 1
+                hasQuantity: true
+                id: id
+                label:
+                  value:
+                    key: value
+                weightVariation: 6.0274563
+              description:
+                value:
+                  key: value
+              id: id
+              label:
+                value:
+                  key: value
+            additionalInfo: additionalInfo
+            id: id
+            isVirtual: true
+            vatInaccurate: true
+            listPrice:
+              micros: 0
+              units: units
+            basePrice:
+              micros: 0
+              units: units
+          status: null
+          customer:
+            firstname: firstname
+            phoneNumber: phoneNumber
+            customerGrn: customerGrn
+            fiscalCode: fiscalCode
+            companyName: companyName
+            groups:
+            - groups
+            - groups
+            taxCode: taxCode
+            sdiCode: sdiCode
+            email: email
+            certifiedEmail: certifiedEmail
+            lastname: lastname
+            agentGrn: agentGrn
+          updatedAt: 2000-01-23T04:56:07.000+00:00
+      properties:
+        cart:
+          $ref: '#/components/schemas/cartCartData'
+      type: object
+    cartItemCustomPrice:
+      example:
+        price:
+          micros: 0
+          units: units
+        previousPrice:
+          micros: 0
+          units: units
+      properties:
+        price:
+          $ref: '#/components/schemas/cartMoney'
+        previousPrice:
+          $ref: '#/components/schemas/cartMoney'
+      type: object
+    cartListCartsRequest:
+      properties:
+        tenantId:
+          type: string
+        pageSize:
+          format: int64
+          title: if page_size is not set it will default to 0 which means all available
+            carts
+          type: integer
+        pageToken:
+          type: string
+        sorts:
+          items:
+            $ref: '#/components/schemas/ListCartsRequestSort'
+          type: array
+        filterMask:
+          type: string
+        filter:
+          $ref: '#/components/schemas/ListCartsRequestFilter'
+      type: object
+    cartListCartsResponse:
+      example:
+        carts:
+        - subtotals:
+          - code: null
+            value:
+              micros: 0
+              units: units
+          - code: null
+            value:
+              micros: 0
+              units: units
+          grn: grn
+          notes: notes
+          payments:
+          - amount:
+              micros: 0
+              units: units
+            code: code
+            payload: payload
+            vatPercentage: 2.302136
+            fee:
+              micros: 0
+              units: units
+            description:
+              value:
+                key: value
+            label:
+              value:
+                key: value
+            title:
+              value:
+                key: value
+            vatInaccurate: true
+            vatCalculated: true
+            vatAmount:
+              micros: 0
+              units: units
+            isUpfront: true
+          - amount:
+              micros: 0
+              units: units
+            code: code
+            payload: payload
+            vatPercentage: 2.302136
+            fee:
+              micros: 0
+              units: units
+            description:
+              value:
+                key: value
+            label:
+              value:
+                key: value
+            title:
+              value:
+                key: value
+            vatInaccurate: true
+            vatCalculated: true
+            vatAmount:
+              micros: 0
+              units: units
+            isUpfront: true
+          totalDue:
+            micros: 0
+            units: units
+          channel: channel
+          locale: locale
+          shipments:
+          - code: code
+            method: method
+            cartItemIds:
+            - cartItemIds
+            - cartItemIds
+            shipmentGrn: shipmentGrn
+            payload: payload
+            vatPercentage: 7.0614014
+            fee:
+              micros: 0
+              units: units
+            label: label
+            vatInaccurate: true
+            vatCalculated: true
+            vatAmount:
+              micros: 0
+              units: units
+          - code: code
+            method: method
+            cartItemIds:
+            - cartItemIds
+            - cartItemIds
+            shipmentGrn: shipmentGrn
+            payload: payload
+            vatPercentage: 7.0614014
+            fee:
+              micros: 0
+              units: units
+            label: label
+            vatInaccurate: true
+            vatCalculated: true
+            vatAmount:
+              micros: 0
+              units: units
+          market: market
+          createdAt: 2000-01-23T04:56:07.000+00:00
+          promotions:
+          - cartItemIds:
+            - cartItemIds
+            - cartItemIds
+            payload: payload
+            vatPercentage: 9.301444
+            name: name
+            description: description
+            discount:
+              micros: 0
+              units: units
+            promotionGrn: promotionGrn
+            type: type
+            couponCode: couponCode
+            vatInaccurate: true
+            vatCalculated: true
+            vatAmount:
+              micros: 0
+              units: units
+          - cartItemIds:
+            - cartItemIds
+            - cartItemIds
+            payload: payload
+            vatPercentage: 9.301444
+            name: name
+            description: description
+            discount:
+              micros: 0
+              units: units
+            promotionGrn: promotionGrn
+            type: type
+            couponCode: couponCode
+            vatInaccurate: true
+            vatCalculated: true
+            vatAmount:
+              micros: 0
+              units: units
+          total:
+            micros: 0
+            units: units
+          vatIncluded: true
+          shippingAddress:
+            postalCode: postalCode
+            locality: locality
+            sublocality: sublocality
+            languageCode: languageCode
+            administrativeArea: administrativeArea
+            revision: 3
+            regionCode: regionCode
+            phoneNumber: phoneNumber
+            sortingCode: sortingCode
+            recipients:
+            - recipients
+            - recipients
+            organization: organization
+            additionalInfo: "{}"
+            addressLines:
+            - addressLines
+            - addressLines
+          currency: null
+          id: id
+          billingAddress:
+            postalCode: postalCode
+            locality: locality
+            sublocality: sublocality
+            languageCode: languageCode
+            administrativeArea: administrativeArea
+            revision: 3
+            regionCode: regionCode
+            phoneNumber: phoneNumber
+            sortingCode: sortingCode
+            recipients:
+            - recipients
+            - recipients
+            organization: organization
+            additionalInfo: "{}"
+            addressLines:
+            - addressLines
+            - addressLines
+          items:
+          - customPrice:
+              price:
+                micros: 0
+                units: units
+              previousPrice:
+                micros: 0
+                units: units
+            localizedName:
+              key: localizedName
+            quantity: 5
+            productGrn: productGrn
+            discount:
+              micros: 0
+              units: units
+            productData: productData
+            promotionGrns:
+            - promotionGrns
+            - promotionGrns
+            imageGrn: imageGrn
+            vatCalculated: true
+            vatAmount:
+              micros: 0
+              units: units
+            productSku: productSku
+            productCode: productCode
+            variantOptions: variantOptions
+            price:
+              micros: 0
+              units: units
+            vatPercentage: 5.637377
+            productConfiguration:
+            - grn: grn
+              options:
+              - image:
+                  grn: grn
+                  url: url
+                grn: grn
+                priceVariation:
+                  micros: 0
+                  units: units
+                quantity: 1
+                hasQuantity: true
+                id: id
+                label:
+                  value:
+                    key: value
+                weightVariation: 6.0274563
+              - image:
+                  grn: grn
+                  url: url
+                grn: grn
+                priceVariation:
+                  micros: 0
+                  units: units
+                quantity: 1
+                hasQuantity: true
+                id: id
+                label:
+                  value:
+                    key: value
+                weightVariation: 6.0274563
+              description:
+                value:
+                  key: value
+              id: id
+              label:
+                value:
+                  key: value
+            - grn: grn
+              options:
+              - image:
+                  grn: grn
+                  url: url
+                grn: grn
+                priceVariation:
+                  micros: 0
+                  units: units
+                quantity: 1
+                hasQuantity: true
+                id: id
+                label:
+                  value:
+                    key: value
+                weightVariation: 6.0274563
+              - image:
+                  grn: grn
+                  url: url
+                grn: grn
+                priceVariation:
+                  micros: 0
+                  units: units
+                quantity: 1
+                hasQuantity: true
+                id: id
+                label:
+                  value:
+                    key: value
+                weightVariation: 6.0274563
+              description:
+                value:
+                  key: value
+              id: id
+              label:
+                value:
+                  key: value
+            additionalInfo: additionalInfo
+            id: id
+            isVirtual: true
+            vatInaccurate: true
+            listPrice:
+              micros: 0
+              units: units
+            basePrice:
+              micros: 0
+              units: units
+          - customPrice:
+              price:
+                micros: 0
+                units: units
+              previousPrice:
+                micros: 0
+                units: units
+            localizedName:
+              key: localizedName
+            quantity: 5
+            productGrn: productGrn
+            discount:
+              micros: 0
+              units: units
+            productData: productData
+            promotionGrns:
+            - promotionGrns
+            - promotionGrns
+            imageGrn: imageGrn
+            vatCalculated: true
+            vatAmount:
+              micros: 0
+              units: units
+            productSku: productSku
+            productCode: productCode
+            variantOptions: variantOptions
+            price:
+              micros: 0
+              units: units
+            vatPercentage: 5.637377
+            productConfiguration:
+            - grn: grn
+              options:
+              - image:
+                  grn: grn
+                  url: url
+                grn: grn
+                priceVariation:
+                  micros: 0
+                  units: units
+                quantity: 1
+                hasQuantity: true
+                id: id
+                label:
+                  value:
+                    key: value
+                weightVariation: 6.0274563
+              - image:
+                  grn: grn
+                  url: url
+                grn: grn
+                priceVariation:
+                  micros: 0
+                  units: units
+                quantity: 1
+                hasQuantity: true
+                id: id
+                label:
+                  value:
+                    key: value
+                weightVariation: 6.0274563
+              description:
+                value:
+                  key: value
+              id: id
+              label:
+                value:
+                  key: value
+            - grn: grn
+              options:
+              - image:
+                  grn: grn
+                  url: url
+                grn: grn
+                priceVariation:
+                  micros: 0
+                  units: units
+                quantity: 1
+                hasQuantity: true
+                id: id
+                label:
+                  value:
+                    key: value
+                weightVariation: 6.0274563
+              - image:
+                  grn: grn
+                  url: url
+                grn: grn
+                priceVariation:
+                  micros: 0
+                  units: units
+                quantity: 1
+                hasQuantity: true
+                id: id
+                label:
+                  value:
+                    key: value
+                weightVariation: 6.0274563
+              description:
+                value:
+                  key: value
+              id: id
+              label:
+                value:
+                  key: value
+            additionalInfo: additionalInfo
+            id: id
+            isVirtual: true
+            vatInaccurate: true
+            listPrice:
+              micros: 0
+              units: units
+            basePrice:
+              micros: 0
+              units: units
+          status: null
+          customer:
+            firstname: firstname
+            phoneNumber: phoneNumber
+            customerGrn: customerGrn
+            fiscalCode: fiscalCode
+            companyName: companyName
+            groups:
+            - groups
+            - groups
+            taxCode: taxCode
+            sdiCode: sdiCode
+            email: email
+            certifiedEmail: certifiedEmail
+            lastname: lastname
+            agentGrn: agentGrn
+          updatedAt: 2000-01-23T04:56:07.000+00:00
+        - subtotals:
+          - code: null
+            value:
+              micros: 0
+              units: units
+          - code: null
+            value:
+              micros: 0
+              units: units
+          grn: grn
+          notes: notes
+          payments:
+          - amount:
+              micros: 0
+              units: units
+            code: code
+            payload: payload
+            vatPercentage: 2.302136
+            fee:
+              micros: 0
+              units: units
+            description:
+              value:
+                key: value
+            label:
+              value:
+                key: value
+            title:
+              value:
+                key: value
+            vatInaccurate: true
+            vatCalculated: true
+            vatAmount:
+              micros: 0
+              units: units
+            isUpfront: true
+          - amount:
+              micros: 0
+              units: units
+            code: code
+            payload: payload
+            vatPercentage: 2.302136
+            fee:
+              micros: 0
+              units: units
+            description:
+              value:
+                key: value
+            label:
+              value:
+                key: value
+            title:
+              value:
+                key: value
+            vatInaccurate: true
+            vatCalculated: true
+            vatAmount:
+              micros: 0
+              units: units
+            isUpfront: true
+          totalDue:
+            micros: 0
+            units: units
+          channel: channel
+          locale: locale
+          shipments:
+          - code: code
+            method: method
+            cartItemIds:
+            - cartItemIds
+            - cartItemIds
+            shipmentGrn: shipmentGrn
+            payload: payload
+            vatPercentage: 7.0614014
+            fee:
+              micros: 0
+              units: units
+            label: label
+            vatInaccurate: true
+            vatCalculated: true
+            vatAmount:
+              micros: 0
+              units: units
+          - code: code
+            method: method
+            cartItemIds:
+            - cartItemIds
+            - cartItemIds
+            shipmentGrn: shipmentGrn
+            payload: payload
+            vatPercentage: 7.0614014
+            fee:
+              micros: 0
+              units: units
+            label: label
+            vatInaccurate: true
+            vatCalculated: true
+            vatAmount:
+              micros: 0
+              units: units
+          market: market
+          createdAt: 2000-01-23T04:56:07.000+00:00
+          promotions:
+          - cartItemIds:
+            - cartItemIds
+            - cartItemIds
+            payload: payload
+            vatPercentage: 9.301444
+            name: name
+            description: description
+            discount:
+              micros: 0
+              units: units
+            promotionGrn: promotionGrn
+            type: type
+            couponCode: couponCode
+            vatInaccurate: true
+            vatCalculated: true
+            vatAmount:
+              micros: 0
+              units: units
+          - cartItemIds:
+            - cartItemIds
+            - cartItemIds
+            payload: payload
+            vatPercentage: 9.301444
+            name: name
+            description: description
+            discount:
+              micros: 0
+              units: units
+            promotionGrn: promotionGrn
+            type: type
+            couponCode: couponCode
+            vatInaccurate: true
+            vatCalculated: true
+            vatAmount:
+              micros: 0
+              units: units
+          total:
+            micros: 0
+            units: units
+          vatIncluded: true
+          shippingAddress:
+            postalCode: postalCode
+            locality: locality
+            sublocality: sublocality
+            languageCode: languageCode
+            administrativeArea: administrativeArea
+            revision: 3
+            regionCode: regionCode
+            phoneNumber: phoneNumber
+            sortingCode: sortingCode
+            recipients:
+            - recipients
+            - recipients
+            organization: organization
+            additionalInfo: "{}"
+            addressLines:
+            - addressLines
+            - addressLines
+          currency: null
+          id: id
+          billingAddress:
+            postalCode: postalCode
+            locality: locality
+            sublocality: sublocality
+            languageCode: languageCode
+            administrativeArea: administrativeArea
+            revision: 3
+            regionCode: regionCode
+            phoneNumber: phoneNumber
+            sortingCode: sortingCode
+            recipients:
+            - recipients
+            - recipients
+            organization: organization
+            additionalInfo: "{}"
+            addressLines:
+            - addressLines
+            - addressLines
+          items:
+          - customPrice:
+              price:
+                micros: 0
+                units: units
+              previousPrice:
+                micros: 0
+                units: units
+            localizedName:
+              key: localizedName
+            quantity: 5
+            productGrn: productGrn
+            discount:
+              micros: 0
+              units: units
+            productData: productData
+            promotionGrns:
+            - promotionGrns
+            - promotionGrns
+            imageGrn: imageGrn
+            vatCalculated: true
+            vatAmount:
+              micros: 0
+              units: units
+            productSku: productSku
+            productCode: productCode
+            variantOptions: variantOptions
+            price:
+              micros: 0
+              units: units
+            vatPercentage: 5.637377
+            productConfiguration:
+            - grn: grn
+              options:
+              - image:
+                  grn: grn
+                  url: url
+                grn: grn
+                priceVariation:
+                  micros: 0
+                  units: units
+                quantity: 1
+                hasQuantity: true
+                id: id
+                label:
+                  value:
+                    key: value
+                weightVariation: 6.0274563
+              - image:
+                  grn: grn
+                  url: url
+                grn: grn
+                priceVariation:
+                  micros: 0
+                  units: units
+                quantity: 1
+                hasQuantity: true
+                id: id
+                label:
+                  value:
+                    key: value
+                weightVariation: 6.0274563
+              description:
+                value:
+                  key: value
+              id: id
+              label:
+                value:
+                  key: value
+            - grn: grn
+              options:
+              - image:
+                  grn: grn
+                  url: url
+                grn: grn
+                priceVariation:
+                  micros: 0
+                  units: units
+                quantity: 1
+                hasQuantity: true
+                id: id
+                label:
+                  value:
+                    key: value
+                weightVariation: 6.0274563
+              - image:
+                  grn: grn
+                  url: url
+                grn: grn
+                priceVariation:
+                  micros: 0
+                  units: units
+                quantity: 1
+                hasQuantity: true
+                id: id
+                label:
+                  value:
+                    key: value
+                weightVariation: 6.0274563
+              description:
+                value:
+                  key: value
+              id: id
+              label:
+                value:
+                  key: value
+            additionalInfo: additionalInfo
+            id: id
+            isVirtual: true
+            vatInaccurate: true
+            listPrice:
+              micros: 0
+              units: units
+            basePrice:
+              micros: 0
+              units: units
+          - customPrice:
+              price:
+                micros: 0
+                units: units
+              previousPrice:
+                micros: 0
+                units: units
+            localizedName:
+              key: localizedName
+            quantity: 5
+            productGrn: productGrn
+            discount:
+              micros: 0
+              units: units
+            productData: productData
+            promotionGrns:
+            - promotionGrns
+            - promotionGrns
+            imageGrn: imageGrn
+            vatCalculated: true
+            vatAmount:
+              micros: 0
+              units: units
+            productSku: productSku
+            productCode: productCode
+            variantOptions: variantOptions
+            price:
+              micros: 0
+              units: units
+            vatPercentage: 5.637377
+            productConfiguration:
+            - grn: grn
+              options:
+              - image:
+                  grn: grn
+                  url: url
+                grn: grn
+                priceVariation:
+                  micros: 0
+                  units: units
+                quantity: 1
+                hasQuantity: true
+                id: id
+                label:
+                  value:
+                    key: value
+                weightVariation: 6.0274563
+              - image:
+                  grn: grn
+                  url: url
+                grn: grn
+                priceVariation:
+                  micros: 0
+                  units: units
+                quantity: 1
+                hasQuantity: true
+                id: id
+                label:
+                  value:
+                    key: value
+                weightVariation: 6.0274563
+              description:
+                value:
+                  key: value
+              id: id
+              label:
+                value:
+                  key: value
+            - grn: grn
+              options:
+              - image:
+                  grn: grn
+                  url: url
+                grn: grn
+                priceVariation:
+                  micros: 0
+                  units: units
+                quantity: 1
+                hasQuantity: true
+                id: id
+                label:
+                  value:
+                    key: value
+                weightVariation: 6.0274563
+              - image:
+                  grn: grn
+                  url: url
+                grn: grn
+                priceVariation:
+                  micros: 0
+                  units: units
+                quantity: 1
+                hasQuantity: true
+                id: id
+                label:
+                  value:
+                    key: value
+                weightVariation: 6.0274563
+              description:
+                value:
+                  key: value
+              id: id
+              label:
+                value:
+                  key: value
+            additionalInfo: additionalInfo
+            id: id
+            isVirtual: true
+            vatInaccurate: true
+            listPrice:
+              micros: 0
+              units: units
+            basePrice:
+              micros: 0
+              units: units
+          status: null
+          customer:
+            firstname: firstname
+            phoneNumber: phoneNumber
+            customerGrn: customerGrn
+            fiscalCode: fiscalCode
+            companyName: companyName
+            groups:
+            - groups
+            - groups
+            taxCode: taxCode
+            sdiCode: sdiCode
+            email: email
+            certifiedEmail: certifiedEmail
+            lastname: lastname
+            agentGrn: agentGrn
+          updatedAt: 2000-01-23T04:56:07.000+00:00
+        nextPageToken: nextPageToken
+      properties:
+        carts:
+          items:
+            $ref: '#/components/schemas/cartCartData'
+          type: array
+        nextPageToken:
+          type: string
+      type: object
+    cartListPaymentMethodsRequest:
+      properties:
+        tenantId:
+          type: string
+        cartId:
+          type: string
+      type: object
+    cartListPaymentMethodsResponse:
+      example:
+        payments:
+        - amount:
+            micros: 0
+            units: units
+          code: code
+          payload: payload
+          vatPercentage: 2.302136
+          fee:
+            micros: 0
+            units: units
+          description:
+            value:
+              key: value
+          label:
+            value:
+              key: value
+          title:
+            value:
+              key: value
+          vatInaccurate: true
+          vatCalculated: true
+          vatAmount:
+            micros: 0
+            units: units
+          isUpfront: true
+        - amount:
+            micros: 0
+            units: units
+          code: code
+          payload: payload
+          vatPercentage: 2.302136
+          fee:
+            micros: 0
+            units: units
+          description:
+            value:
+              key: value
+          label:
+            value:
+              key: value
+          title:
+            value:
+              key: value
+          vatInaccurate: true
+          vatCalculated: true
+          vatAmount:
+            micros: 0
+            units: units
+          isUpfront: true
+      properties:
+        payments:
+          items:
+            $ref: '#/components/schemas/cartPaymentData'
+          type: array
+      type: object
+    cartListShipmentMethodsRequest:
+      properties:
+        tenantId:
+          type: string
+        cartId:
+          type: string
+      type: object
+    cartListShipmentMethodsResponse:
+      example:
+        shipments:
+        - code: code
+          method: method
+          cartItemIds:
+          - cartItemIds
+          - cartItemIds
+          shipmentGrn: shipmentGrn
+          payload: payload
+          vatPercentage: 7.0614014
+          fee:
+            micros: 0
+            units: units
+          label: label
+          vatInaccurate: true
+          vatCalculated: true
+          vatAmount:
+            micros: 0
+            units: units
+        - code: code
+          method: method
+          cartItemIds:
+          - cartItemIds
+          - cartItemIds
+          shipmentGrn: shipmentGrn
+          payload: payload
+          vatPercentage: 7.0614014
+          fee:
+            micros: 0
+            units: units
+          label: label
+          vatInaccurate: true
+          vatCalculated: true
+          vatAmount:
+            micros: 0
+            units: units
+      properties:
+        shipments:
+          items:
+            $ref: '#/components/schemas/cartShipmentData'
+          type: array
+      type: object
+    cartLocalizedText:
+      example:
+        value:
+          key: value
+      properties:
+        value:
+          additionalProperties:
+            type: string
+          type: object
+      type: object
+    cartMergeCartsRequest:
+      properties:
+        tenantId:
+          type: string
+        sourceCartIds:
+          items:
+            type: string
+          type: array
+        targetCartId:
+          type: string
+      type: object
+    cartMergeCartsResponse:
+      example:
+        cartId: cartId
+      properties:
+        cartId:
+          type: string
+      type: object
+    cartMoney:
+      example:
+        micros: 0
+        units: units
+      properties:
+        units:
+          description: |-
+            The whole units of the amount.
+            For example if `currencyCode` is `"USD"`, then 1 unit is one US dollar.
+          format: int64
+          type: string
+        micros:
+          description: |-
+            Number of micro (10^-6) units of the amount.
+            The value must be between -999,999 and +999,999 inclusive.
+            If `units` is positive, `micros` must be positive or zero.
+            If `units` is zero, `micros` can be positive, zero, or negative.
+            If `units` is negative, `micros` must be negative or zero.
+            For example $-1.75 is represented as `units`=-1 and `micros`=-750,000.
+          format: int32
+          type: integer
+      type: object
+    cartPaymentData:
+      example:
+        amount:
+          micros: 0
+          units: units
+        code: code
+        payload: payload
+        vatPercentage: 2.302136
+        fee:
+          micros: 0
+          units: units
+        description:
+          value:
+            key: value
+        label:
+          value:
+            key: value
+        title:
+          value:
+            key: value
+        vatInaccurate: true
+        vatCalculated: true
+        vatAmount:
+          micros: 0
+          units: units
+        isUpfront: true
+      properties:
+        code:
+          type: string
+        title:
+          $ref: '#/components/schemas/cartLocalizedText'
+        payload:
+          type: string
+        fee:
+          $ref: '#/components/schemas/cartMoney'
+        amount:
+          $ref: '#/components/schemas/cartMoney'
+        label:
+          $ref: '#/components/schemas/cartLocalizedText'
+        description:
+          $ref: '#/components/schemas/cartLocalizedText'
+        vatAmount:
+          $ref: '#/components/schemas/cartMoney'
+        vatPercentage:
+          format: float
+          title: The VAT percentage to show (not to be used for calculation)
+          type: number
+        vatInaccurate:
+          title: Is set to true if the VAT percentage is inaccurate (fallback with
+            BaseCalculator)
+          type: boolean
+        vatCalculated:
+          title: Is set to true if the VAT is calculated
+          type: boolean
+        isUpfront:
+          type: boolean
+      type: object
+    cartPostalAddress:
+      description: |-
+        Represents a postal address, e.g. for postal delivery or payments addresses.
+        Given a postal address, a postal service can deliver items to a premise, P.O.
+        Box or similar.
+        It is not intended to model geographical locations (roads, towns,
+        mountains).
+
+        In typical usage an address would be created via user input or from importing
+        existing data, depending on the type of process.
+
+        Advice on address input / editing:
+         - Use an i18n-ready address widget such as
+           https://github.com/google/libaddressinput)
+        - Users should not be presented with UI elements for input or editing of
+          fields outside countries where that field is used.
+
+        For more guidance on how to use this schema, please see:
+        https://support.google.com/business/answer/6397478
+      example:
+        postalCode: postalCode
+        locality: locality
+        sublocality: sublocality
+        languageCode: languageCode
+        administrativeArea: administrativeArea
+        revision: 3
+        regionCode: regionCode
+        phoneNumber: phoneNumber
+        sortingCode: sortingCode
+        recipients:
+        - recipients
+        - recipients
+        organization: organization
+        additionalInfo: "{}"
+        addressLines:
+        - addressLines
+        - addressLines
+      properties:
+        revision:
+          description: |-
+            The schema revision of the `PostalAddress`. This must be set to 0, which is
+            the latest revision.
+
+            All new revisions **must** be backward compatible with old revisions.
+          format: int32
+          type: integer
+        regionCode:
+          description: |-
+            Required. CLDR region code of the country/region of the address. This
+            is never inferred and it is up to the user to ensure the value is
+            correct. See http://cldr.unicode.org/ and
+            http://www.unicode.org/cldr/charts/30/supplemental/territory_information.html
+            for details. Example: "CH" for Switzerland.
+          type: string
+        languageCode:
+          description: |-
+            Optional. BCP-47 language code of the contents of this address (if
+            known). This is often the UI language of the input form or is expected
+            to match one of the languages used in the address' country/region, or their
+            transliterated equivalents.
+            This can affect formatting in certain countries, but is not critical
+            to the correctness of the data and will never affect any validation or
+            other non-formatting related operations.
+
+            If this value is not known, it should be omitted (rather than specifying a
+            possibly incorrect default).
+
+            Examples: "zh-Hant", "ja", "ja-Latn", "en".
+          type: string
+        postalCode:
+          description: |-
+            Optional. Postal code of the address. Not all countries use or require
+            postal codes to be present, but where they are used, they may trigger
+            additional validation with other parts of the address (e.g. state/zip
+            validation in the U.S.A.).
+          type: string
+        sortingCode:
+          description: |-
+            Optional. Additional, country-specific, sorting code. This is not used
+            in most regions. Where it is used, the value is either a string like
+            "CEDEX", optionally followed by a number (e.g. "CEDEX 7"), or just a number
+            alone, representing the "sector code" (Jamaica), "delivery area indicator"
+            (Malawi) or "post office indicator" (e.g. Côte d'Ivoire).
+          type: string
+        administrativeArea:
+          description: |-
+            Optional. Highest administrative subdivision which is used for postal
+            addresses of a country or region.
+            For example, this can be a state, a province, an oblast, or a prefecture.
+            Specifically, for Spain this is the province and not the autonomous
+            community (e.g. "Barcelona" and not "Catalonia").
+            Many countries don't use an administrative area in postal addresses. E.g.
+            in Switzerland this should be left unpopulated.
+          type: string
+        locality:
+          description: |-
+            Optional. Generally refers to the city/town portion of the address.
+            Examples: US city, IT comune, UK post town.
+            In regions of the world where localities are not well defined or do not fit
+            into this structure well, leave locality empty and use address_lines.
+          type: string
+        sublocality:
+          description: |-
+            Optional. Sublocality of the address.
+            For example, this can be neighborhoods, boroughs, districts.
+          type: string
+        addressLines:
+          description: |-
+            Unstructured address lines describing the lower levels of an address.
+
+            Because values in address_lines do not have type information and may
+            sometimes contain multiple values in a single field (e.g.
+            "Austin, TX"), it is important that the line order is clear. The order of
+            address lines should be "envelope order" for the country/region of the
+            address. In places where this can vary (e.g. Japan), address_language is
+            used to make it explicit (e.g. "ja" for large-to-small ordering and
+            "ja-Latn" or "en" for small-to-large). This way, the most specific line of
+            an address can be selected based on the language.
+
+            The minimum permitted structural representation of an address consists
+            of a region_code with all remaining information placed in the
+            address_lines. It would be possible to format such an address very
+            approximately without geocoding, but no semantic reasoning could be
+            made about any of the address components until it was at least
+            partially resolved.
+
+            Creating an address only containing a region_code and address_lines, and
+            then geocoding is the recommended way to handle completely unstructured
+            addresses (as opposed to guessing which parts of the address should be
+            localities or administrative areas).
+          items:
+            type: string
+          type: array
+        recipients:
+          description: |-
+            Optional. The recipient at the address.
+            This field may, under certain circumstances, contain multiline information.
+            For example, it might contain "care of" information.
+          items:
+            type: string
+          type: array
+        organization:
+          description: Optional. The name of the organization at the address.
+          type: string
+        phoneNumber:
+          description: Optional.
+          type: string
+        additionalInfo:
+          description: Optional.
+          properties: {}
+          type: object
+      type: object
+    cartProductConfigurationSelection:
+      example:
+        stepGrn: stepGrn
+        options:
+        - grn: grn
+          quantity: 6
+        - grn: grn
+          quantity: 6
+      properties:
+        stepGrn:
+          type: string
+        options:
+          items:
+            $ref: '#/components/schemas/cartProductConfigurationSelectionOption'
+          type: array
+      type: object
+    cartProductConfigurationSelectionOption:
+      example:
+        grn: grn
+        quantity: 6
+      properties:
+        grn:
+          type: string
+        quantity:
+          format: int64
+          type: integer
+      type: object
+    cartProductConfigurationStep:
+      example:
+        grn: grn
+        options:
+        - image:
+            grn: grn
+            url: url
+          grn: grn
+          priceVariation:
+            micros: 0
+            units: units
+          quantity: 1
+          hasQuantity: true
+          id: id
+          label:
+            value:
+              key: value
+          weightVariation: 6.0274563
+        - image:
+            grn: grn
+            url: url
+          grn: grn
+          priceVariation:
+            micros: 0
+            units: units
+          quantity: 1
+          hasQuantity: true
+          id: id
+          label:
+            value:
+              key: value
+          weightVariation: 6.0274563
+        description:
+          value:
+            key: value
+        id: id
+        label:
+          value:
+            key: value
+      properties:
+        id:
+          type: string
+        grn:
+          type: string
+        label:
+          $ref: '#/components/schemas/cartLocalizedText'
+        description:
+          $ref: '#/components/schemas/cartLocalizedText'
+        options:
+          items:
+            $ref: '#/components/schemas/cartProductConfigurationStepOption'
+          type: array
+      type: object
+    cartProductConfigurationStepOption:
+      example:
+        image:
+          grn: grn
+          url: url
+        grn: grn
+        priceVariation:
+          micros: 0
+          units: units
+        quantity: 1
+        hasQuantity: true
+        id: id
+        label:
+          value:
+            key: value
+        weightVariation: 6.0274563
+      properties:
+        id:
+          type: string
+        grn:
+          type: string
+        label:
+          $ref: '#/components/schemas/cartLocalizedText'
+        priceVariation:
+          $ref: '#/components/schemas/cartMoney'
+        weightVariation:
+          format: float
+          type: number
+        image:
+          $ref: '#/components/schemas/OptionImage'
+        hasQuantity:
+          type: boolean
+        quantity:
+          format: int64
+          type: integer
+      type: object
+    cartPromotionData:
+      example:
+        cartItemIds:
+        - cartItemIds
+        - cartItemIds
+        payload: payload
+        vatPercentage: 9.301444
+        name: name
+        description: description
+        discount:
+          micros: 0
+          units: units
+        promotionGrn: promotionGrn
+        type: type
+        couponCode: couponCode
+        vatInaccurate: true
+        vatCalculated: true
+        vatAmount:
+          micros: 0
+          units: units
+      properties:
+        promotionGrn:
+          type: string
+        type:
+          type: string
+        payload:
+          type: string
+        cartItemIds:
+          items:
+            type: string
+          title: "optional, for now leave empty"
+          type: array
+        name:
+          type: string
+        description:
+          type: string
+        couponCode:
+          title: "optional, only populated for coupon promotions"
+          type: string
+        discount:
+          $ref: '#/components/schemas/cartMoney'
+        vatAmount:
+          $ref: '#/components/schemas/cartMoney'
+        vatPercentage:
+          format: float
+          title: The VAT percentage to show (not to be used for calculation)
+          type: number
+        vatInaccurate:
+          title: Is set to true if the VAT percentage is inaccurate (fallback with
+            BaseCalculator)
+          type: boolean
+        vatCalculated:
+          title: Is set to true if the VAT is calculated
+          type: boolean
+      type: object
+    cartRemoveCouponsRequest:
+      properties:
+        tenantId:
+          type: string
+        cartId:
+          type: string
+        couponCodes:
+          items:
+            type: string
+          type: array
+      type: object
+    cartRemoveCouponsResponse:
+      type: object
+    cartRemoveProductsRequest:
+      properties:
+        tenantId:
+          type: string
+        cartId:
+          type: string
+        itemIds:
+          items:
+            type: string
+          type: array
+      type: object
+    cartRemoveProductsResponse:
+      type: object
+    cartSetAdditionalInfoRequest:
+      properties:
+        tenantId:
+          type: string
+        cartId:
+          type: string
+        productId:
+          type: string
+        additionalInfo:
+          type: string
+      type: object
+    cartSetAdditionalInfoResponse:
+      type: object
+    cartSetBillingAddressRequest:
+      properties:
+        tenantId:
+          type: string
+        cartId:
+          type: string
+        address:
+          $ref: '#/components/schemas/cartPostalAddress'
+      type: object
+    cartSetBillingAddressResponse:
+      type: object
+    cartSetCustomPriceOnItemsRequest:
+      properties:
+        tenantId:
+          type: string
+        cartId:
+          type: string
+        cartItems:
+          items:
+            $ref: '#/components/schemas/cartSetCustomPriceOnItemsRequestCartItem'
+          type: array
+      type: object
+    cartSetCustomPriceOnItemsRequestCartItem:
+      properties:
+        id:
+          type: string
+        freeOfCharge:
+          type: boolean
+        unset:
+          type: boolean
+        customPriceRow:
+          $ref: '#/components/schemas/cartMoney'
+        customPriceUnit:
+          $ref: '#/components/schemas/cartMoney'
+        discountPercentage:
+          format: float
+          type: number
+      type: object
+    cartSetCustomPriceOnItemsResponse:
+      type: object
+    cartSetNotesRequest:
+      properties:
+        tenantId:
+          type: string
+        cartId:
+          type: string
+        notes:
+          type: string
+      type: object
+    cartSetNotesResponse:
+      type: object
+    cartSetPaymentsRequest:
+      properties:
+        tenantId:
+          type: string
+        cartId:
+          type: string
+        payments:
+          items:
+            $ref: '#/components/schemas/cartPaymentData'
+          type: array
+      type: object
+    cartSetPaymentsResponse:
+      example:
+        totalDue:
+          micros: 0
+          units: units
+      properties:
+        totalDue:
+          $ref: '#/components/schemas/cartMoney'
+      type: object
+    cartSetShipmentAddressRequest:
+      properties:
+        tenantId:
+          type: string
+        cartId:
+          type: string
+        address:
+          $ref: '#/components/schemas/cartPostalAddress'
+      type: object
+    cartSetShipmentAddressResponse:
+      type: object
+    cartSetShipmentsRequest:
+      properties:
+        tenantId:
+          type: string
+        cartId:
+          type: string
+        shipments:
+          items:
+            $ref: '#/components/schemas/cartShipmentData'
+          type: array
+      type: object
+    cartSetShipmentsResponse:
+      type: object
+    cartShipmentData:
+      example:
+        code: code
+        method: method
+        cartItemIds:
+        - cartItemIds
+        - cartItemIds
+        shipmentGrn: shipmentGrn
+        payload: payload
+        vatPercentage: 7.0614014
+        fee:
+          micros: 0
+          units: units
+        label: label
+        vatInaccurate: true
+        vatCalculated: true
+        vatAmount:
+          micros: 0
+          units: units
+      properties:
+        code:
+          type: string
+        method:
+          type: string
+        shipmentGrn:
+          type: string
+        payload:
+          type: string
+        cartItemIds:
+          items:
+            type: string
+          title: fill with all the item ids
+          type: array
+        fee:
+          $ref: '#/components/schemas/cartMoney'
+        label:
+          type: string
+        vatAmount:
+          $ref: '#/components/schemas/cartMoney'
+        vatPercentage:
+          format: float
+          title: The VAT percentage to show (not to be used for calculation)
+          type: number
+        vatInaccurate:
+          title: Is set to true if the VAT percentage is inaccurate (fallback with
+            BaseCalculator)
+          type: boolean
+        vatCalculated:
+          title: Is set to true if the VAT is calculated
+          type: boolean
+      type: object
+    cartSortOrder:
+      default: DESC
+      enum:
+      - DESC
+      - ASC
+      type: string
+    cartTriggerRealignmentRequest:
+      properties:
+        tenantId:
+          type: string
+        cartId:
+          type: string
+      type: object
+    cartTriggerRealignmentResponse:
+      example:
+        cartId: cartId
+        tenantId: tenantId
+        cartUpdated: true
+      properties:
+        tenantId:
+          type: string
+        cartId:
+          type: string
+        cartUpdated:
+          type: boolean
+      type: object
+    cartUpdateCartRequest:
+      properties:
+        tenantId:
+          type: string
+        cartId:
+          type: string
+        payload:
+          $ref: '#/components/schemas/UpdateCartRequestPayload'
+        payloadMask:
+          type: string
+      type: object
+    cartUpdateCartResponse:
+      type: object
+    cartUpdateProductsRequest:
+      properties:
+        tenantId:
+          type: string
+        cartId:
+          type: string
+        items:
+          items:
+            $ref: '#/components/schemas/cartUpdateProductsRequestItem'
+          type: array
+      type: object
+    cartUpdateProductsRequestItem:
+      properties:
+        id:
+          type: string
+        quantity:
+          format: int64
+          type: integer
+        configurationSelections:
+          items:
+            $ref: '#/components/schemas/cartProductConfigurationSelection'
+          type: array
+      type: object
+    cartUpdateProductsResponse:
+      type: object
+    protobufAny:
+      additionalProperties:
+        type: object
+      properties:
+        '@type':
+          type: string
+      type: object
+    protobufNullValue:
+      default: NULL_VALUE
+      description: |-
+        `NullValue` is a singleton enumeration to represent the null value for the
+        `Value` type union.
+
+         The JSON representation for `NullValue` is JSON `null`.
+
+         - NULL_VALUE: Null value.
+      enum:
+      - NULL_VALUE
+      type: string
+    rpcStatus:
+      properties:
+        code:
+          format: int32
+          type: integer
+        message:
+          type: string
+        details:
+          items:
+            $ref: '#/components/schemas/protobufAny'
+          type: array
+      type: object
+  securitySchemes:
+    Authorization:
+      in: header
+      name: Authorization
+      type: apiKey
+    standardAuthorization:
+      flows:
+        implicit:
+          scopes: {}
+      type: oauth2
+x-original-swagger-version: "2.0"
+
