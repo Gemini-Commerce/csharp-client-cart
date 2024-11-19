@@ -55,6 +55,7 @@ namespace cart.Model
             this.EvaluationOrder = evaluationOrder;
             this.Field = field;
             this.Order = order;
+            this.AdditionalProperties = new Dictionary<string, object>();
         }
 
         /// <summary>
@@ -63,6 +64,12 @@ namespace cart.Model
         /// <value>evaluation_order is the order in which the sort will be applied. The lower the number, the earlier the sort will be applied.</value>
         [DataMember(Name = "evaluationOrder", EmitDefaultValue = false)]
         public long EvaluationOrder { get; set; }
+
+        /// <summary>
+        /// Gets or Sets additional properties
+        /// </summary>
+        [JsonExtensionData]
+        public IDictionary<string, object> AdditionalProperties { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -75,6 +82,7 @@ namespace cart.Model
             sb.Append("  EvaluationOrder: ").Append(EvaluationOrder).Append("\n");
             sb.Append("  Field: ").Append(Field).Append("\n");
             sb.Append("  Order: ").Append(Order).Append("\n");
+            sb.Append("  AdditionalProperties: ").Append(AdditionalProperties).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -93,7 +101,7 @@ namespace cart.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -39,6 +39,7 @@ namespace cart.Model
         public CartGetCartResponse(CartCartData cart = default(CartCartData))
         {
             this.Cart = cart;
+            this.AdditionalProperties = new Dictionary<string, object>();
         }
 
         /// <summary>
@@ -46,6 +47,12 @@ namespace cart.Model
         /// </summary>
         [DataMember(Name = "cart", EmitDefaultValue = false)]
         public CartCartData Cart { get; set; }
+
+        /// <summary>
+        /// Gets or Sets additional properties
+        /// </summary>
+        [JsonExtensionData]
+        public IDictionary<string, object> AdditionalProperties { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -56,6 +63,7 @@ namespace cart.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class CartGetCartResponse {\n");
             sb.Append("  Cart: ").Append(Cart).Append("\n");
+            sb.Append("  AdditionalProperties: ").Append(AdditionalProperties).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -74,7 +82,7 @@ namespace cart.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

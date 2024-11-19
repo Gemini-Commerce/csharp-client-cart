@@ -61,6 +61,7 @@ namespace cart.Model
             this.VatInaccurate = vatInaccurate;
             this.VatCalculated = vatCalculated;
             this.IsUpfront = isUpfront;
+            this.AdditionalProperties = new Dictionary<string, object>();
         }
 
         /// <summary>
@@ -136,6 +137,12 @@ namespace cart.Model
         public bool IsUpfront { get; set; }
 
         /// <summary>
+        /// Gets or Sets additional properties
+        /// </summary>
+        [JsonExtensionData]
+        public IDictionary<string, object> AdditionalProperties { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -155,6 +162,7 @@ namespace cart.Model
             sb.Append("  VatInaccurate: ").Append(VatInaccurate).Append("\n");
             sb.Append("  VatCalculated: ").Append(VatCalculated).Append("\n");
             sb.Append("  IsUpfront: ").Append(IsUpfront).Append("\n");
+            sb.Append("  AdditionalProperties: ").Append(AdditionalProperties).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -173,7 +181,7 @@ namespace cart.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

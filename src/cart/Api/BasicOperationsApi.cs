@@ -324,7 +324,7 @@ namespace cart.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CartAddProductsResponse</returns>
-        System.Threading.Tasks.Task<CartAddProductsResponse> AddProductsAsync(CartAddProductsRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<CartAddProductsResponse> AddProductsAsync(CartAddProductsRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Add Products
@@ -337,7 +337,7 @@ namespace cart.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CartAddProductsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CartAddProductsResponse>> AddProductsWithHttpInfoAsync(CartAddProductsRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<CartAddProductsResponse>> AddProductsWithHttpInfoAsync(CartAddProductsRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Create Cart
         /// </summary>
@@ -349,7 +349,7 @@ namespace cart.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CartCreateCartResponse</returns>
-        System.Threading.Tasks.Task<CartCreateCartResponse> CreateCartAsync(CartCreateCartRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<CartCreateCartResponse> CreateCartAsync(CartCreateCartRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Create Cart
@@ -362,7 +362,7 @@ namespace cart.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CartCreateCartResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CartCreateCartResponse>> CreateCartWithHttpInfoAsync(CartCreateCartRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<CartCreateCartResponse>> CreateCartWithHttpInfoAsync(CartCreateCartRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Get Active Cart By Customer
         /// </summary>
@@ -374,7 +374,7 @@ namespace cart.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CartGetActiveCartByCustomerResponse</returns>
-        System.Threading.Tasks.Task<CartGetActiveCartByCustomerResponse> GetActiveCartByCustomerAsync(CartGetActiveCartByCustomerRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<CartGetActiveCartByCustomerResponse> GetActiveCartByCustomerAsync(CartGetActiveCartByCustomerRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Get Active Cart By Customer
@@ -387,7 +387,7 @@ namespace cart.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CartGetActiveCartByCustomerResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CartGetActiveCartByCustomerResponse>> GetActiveCartByCustomerWithHttpInfoAsync(CartGetActiveCartByCustomerRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<CartGetActiveCartByCustomerResponse>> GetActiveCartByCustomerWithHttpInfoAsync(CartGetActiveCartByCustomerRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Get Cart
         /// </summary>
@@ -399,7 +399,7 @@ namespace cart.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CartGetCartResponse</returns>
-        System.Threading.Tasks.Task<CartGetCartResponse> GetCartAsync(CartGetCartRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<CartGetCartResponse> GetCartAsync(CartGetCartRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Get Cart
@@ -412,7 +412,7 @@ namespace cart.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CartGetCartResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CartGetCartResponse>> GetCartWithHttpInfoAsync(CartGetCartRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<CartGetCartResponse>> GetCartWithHttpInfoAsync(CartGetCartRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// List Carts
         /// </summary>
@@ -424,7 +424,7 @@ namespace cart.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CartListCartsResponse</returns>
-        System.Threading.Tasks.Task<CartListCartsResponse> ListCartsAsync(CartListCartsRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<CartListCartsResponse> ListCartsAsync(CartListCartsRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// List Carts
@@ -437,7 +437,7 @@ namespace cart.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CartListCartsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CartListCartsResponse>> ListCartsWithHttpInfoAsync(CartListCartsRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<CartListCartsResponse>> ListCartsWithHttpInfoAsync(CartListCartsRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Merge Carts
         /// </summary>
@@ -449,7 +449,7 @@ namespace cart.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CartMergeCartsResponse</returns>
-        System.Threading.Tasks.Task<CartMergeCartsResponse> MergeCartsAsync(CartMergeCartsRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<CartMergeCartsResponse> MergeCartsAsync(CartMergeCartsRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Merge Carts
@@ -462,7 +462,7 @@ namespace cart.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CartMergeCartsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CartMergeCartsResponse>> MergeCartsWithHttpInfoAsync(CartMergeCartsRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<CartMergeCartsResponse>> MergeCartsWithHttpInfoAsync(CartMergeCartsRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Remove Products
         /// </summary>
@@ -474,7 +474,7 @@ namespace cart.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> RemoveProductsAsync(CartRemoveProductsRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Object> RemoveProductsAsync(CartRemoveProductsRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Remove Products
@@ -487,7 +487,7 @@ namespace cart.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> RemoveProductsWithHttpInfoAsync(CartRemoveProductsRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> RemoveProductsWithHttpInfoAsync(CartRemoveProductsRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Set Additional Info
         /// </summary>
@@ -499,7 +499,7 @@ namespace cart.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> SetAdditionalInfoAsync(CartSetAdditionalInfoRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Object> SetAdditionalInfoAsync(CartSetAdditionalInfoRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Set Additional Info
@@ -512,7 +512,7 @@ namespace cart.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> SetAdditionalInfoWithHttpInfoAsync(CartSetAdditionalInfoRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> SetAdditionalInfoWithHttpInfoAsync(CartSetAdditionalInfoRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Set Notes
         /// </summary>
@@ -524,7 +524,7 @@ namespace cart.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> SetNotesAsync(CartSetNotesRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Object> SetNotesAsync(CartSetNotesRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Set Notes
@@ -537,7 +537,7 @@ namespace cart.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> SetNotesWithHttpInfoAsync(CartSetNotesRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> SetNotesWithHttpInfoAsync(CartSetNotesRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Trigger Realignment
         /// </summary>
@@ -549,7 +549,7 @@ namespace cart.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CartTriggerRealignmentResponse</returns>
-        System.Threading.Tasks.Task<CartTriggerRealignmentResponse> TriggerRealignmentAsync(CartTriggerRealignmentRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<CartTriggerRealignmentResponse> TriggerRealignmentAsync(CartTriggerRealignmentRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Trigger Realignment
@@ -562,7 +562,7 @@ namespace cart.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CartTriggerRealignmentResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CartTriggerRealignmentResponse>> TriggerRealignmentWithHttpInfoAsync(CartTriggerRealignmentRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<CartTriggerRealignmentResponse>> TriggerRealignmentWithHttpInfoAsync(CartTriggerRealignmentRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Update Cart
         /// </summary>
@@ -574,7 +574,7 @@ namespace cart.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> UpdateCartAsync(CartUpdateCartRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Object> UpdateCartAsync(CartUpdateCartRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Update Cart
@@ -587,7 +587,7 @@ namespace cart.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> UpdateCartWithHttpInfoAsync(CartUpdateCartRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> UpdateCartWithHttpInfoAsync(CartUpdateCartRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Update Products
         /// </summary>
@@ -599,7 +599,7 @@ namespace cart.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> UpdateProductsAsync(CartUpdateProductsRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Object> UpdateProductsAsync(CartUpdateProductsRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Update Products
@@ -612,7 +612,7 @@ namespace cart.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> UpdateProductsWithHttpInfoAsync(CartUpdateProductsRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> UpdateProductsWithHttpInfoAsync(CartUpdateProductsRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -817,7 +817,7 @@ namespace cart.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CartAddProductsResponse</returns>
-        public async System.Threading.Tasks.Task<CartAddProductsResponse> AddProductsAsync(CartAddProductsRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<CartAddProductsResponse> AddProductsAsync(CartAddProductsRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             cart.Client.ApiResponse<CartAddProductsResponse> localVarResponse = await AddProductsWithHttpInfoAsync(body, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -831,7 +831,7 @@ namespace cart.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CartAddProductsResponse)</returns>
-        public async System.Threading.Tasks.Task<cart.Client.ApiResponse<CartAddProductsResponse>> AddProductsWithHttpInfoAsync(CartAddProductsRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<cart.Client.ApiResponse<CartAddProductsResponse>> AddProductsWithHttpInfoAsync(CartAddProductsRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -973,7 +973,7 @@ namespace cart.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CartCreateCartResponse</returns>
-        public async System.Threading.Tasks.Task<CartCreateCartResponse> CreateCartAsync(CartCreateCartRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<CartCreateCartResponse> CreateCartAsync(CartCreateCartRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             cart.Client.ApiResponse<CartCreateCartResponse> localVarResponse = await CreateCartWithHttpInfoAsync(body, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -987,7 +987,7 @@ namespace cart.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CartCreateCartResponse)</returns>
-        public async System.Threading.Tasks.Task<cart.Client.ApiResponse<CartCreateCartResponse>> CreateCartWithHttpInfoAsync(CartCreateCartRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<cart.Client.ApiResponse<CartCreateCartResponse>> CreateCartWithHttpInfoAsync(CartCreateCartRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -1129,7 +1129,7 @@ namespace cart.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CartGetActiveCartByCustomerResponse</returns>
-        public async System.Threading.Tasks.Task<CartGetActiveCartByCustomerResponse> GetActiveCartByCustomerAsync(CartGetActiveCartByCustomerRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<CartGetActiveCartByCustomerResponse> GetActiveCartByCustomerAsync(CartGetActiveCartByCustomerRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             cart.Client.ApiResponse<CartGetActiveCartByCustomerResponse> localVarResponse = await GetActiveCartByCustomerWithHttpInfoAsync(body, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1143,7 +1143,7 @@ namespace cart.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CartGetActiveCartByCustomerResponse)</returns>
-        public async System.Threading.Tasks.Task<cart.Client.ApiResponse<CartGetActiveCartByCustomerResponse>> GetActiveCartByCustomerWithHttpInfoAsync(CartGetActiveCartByCustomerRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<cart.Client.ApiResponse<CartGetActiveCartByCustomerResponse>> GetActiveCartByCustomerWithHttpInfoAsync(CartGetActiveCartByCustomerRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -1285,7 +1285,7 @@ namespace cart.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CartGetCartResponse</returns>
-        public async System.Threading.Tasks.Task<CartGetCartResponse> GetCartAsync(CartGetCartRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<CartGetCartResponse> GetCartAsync(CartGetCartRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             cart.Client.ApiResponse<CartGetCartResponse> localVarResponse = await GetCartWithHttpInfoAsync(body, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1299,7 +1299,7 @@ namespace cart.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CartGetCartResponse)</returns>
-        public async System.Threading.Tasks.Task<cart.Client.ApiResponse<CartGetCartResponse>> GetCartWithHttpInfoAsync(CartGetCartRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<cart.Client.ApiResponse<CartGetCartResponse>> GetCartWithHttpInfoAsync(CartGetCartRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -1441,7 +1441,7 @@ namespace cart.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CartListCartsResponse</returns>
-        public async System.Threading.Tasks.Task<CartListCartsResponse> ListCartsAsync(CartListCartsRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<CartListCartsResponse> ListCartsAsync(CartListCartsRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             cart.Client.ApiResponse<CartListCartsResponse> localVarResponse = await ListCartsWithHttpInfoAsync(body, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1455,7 +1455,7 @@ namespace cart.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CartListCartsResponse)</returns>
-        public async System.Threading.Tasks.Task<cart.Client.ApiResponse<CartListCartsResponse>> ListCartsWithHttpInfoAsync(CartListCartsRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<cart.Client.ApiResponse<CartListCartsResponse>> ListCartsWithHttpInfoAsync(CartListCartsRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -1597,7 +1597,7 @@ namespace cart.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CartMergeCartsResponse</returns>
-        public async System.Threading.Tasks.Task<CartMergeCartsResponse> MergeCartsAsync(CartMergeCartsRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<CartMergeCartsResponse> MergeCartsAsync(CartMergeCartsRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             cart.Client.ApiResponse<CartMergeCartsResponse> localVarResponse = await MergeCartsWithHttpInfoAsync(body, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1611,7 +1611,7 @@ namespace cart.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CartMergeCartsResponse)</returns>
-        public async System.Threading.Tasks.Task<cart.Client.ApiResponse<CartMergeCartsResponse>> MergeCartsWithHttpInfoAsync(CartMergeCartsRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<cart.Client.ApiResponse<CartMergeCartsResponse>> MergeCartsWithHttpInfoAsync(CartMergeCartsRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -1753,7 +1753,7 @@ namespace cart.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> RemoveProductsAsync(CartRemoveProductsRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Object> RemoveProductsAsync(CartRemoveProductsRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             cart.Client.ApiResponse<Object> localVarResponse = await RemoveProductsWithHttpInfoAsync(body, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1767,7 +1767,7 @@ namespace cart.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<cart.Client.ApiResponse<Object>> RemoveProductsWithHttpInfoAsync(CartRemoveProductsRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<cart.Client.ApiResponse<Object>> RemoveProductsWithHttpInfoAsync(CartRemoveProductsRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -1909,7 +1909,7 @@ namespace cart.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> SetAdditionalInfoAsync(CartSetAdditionalInfoRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Object> SetAdditionalInfoAsync(CartSetAdditionalInfoRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             cart.Client.ApiResponse<Object> localVarResponse = await SetAdditionalInfoWithHttpInfoAsync(body, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1923,7 +1923,7 @@ namespace cart.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<cart.Client.ApiResponse<Object>> SetAdditionalInfoWithHttpInfoAsync(CartSetAdditionalInfoRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<cart.Client.ApiResponse<Object>> SetAdditionalInfoWithHttpInfoAsync(CartSetAdditionalInfoRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -2065,7 +2065,7 @@ namespace cart.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> SetNotesAsync(CartSetNotesRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Object> SetNotesAsync(CartSetNotesRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             cart.Client.ApiResponse<Object> localVarResponse = await SetNotesWithHttpInfoAsync(body, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -2079,7 +2079,7 @@ namespace cart.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<cart.Client.ApiResponse<Object>> SetNotesWithHttpInfoAsync(CartSetNotesRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<cart.Client.ApiResponse<Object>> SetNotesWithHttpInfoAsync(CartSetNotesRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -2221,7 +2221,7 @@ namespace cart.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CartTriggerRealignmentResponse</returns>
-        public async System.Threading.Tasks.Task<CartTriggerRealignmentResponse> TriggerRealignmentAsync(CartTriggerRealignmentRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<CartTriggerRealignmentResponse> TriggerRealignmentAsync(CartTriggerRealignmentRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             cart.Client.ApiResponse<CartTriggerRealignmentResponse> localVarResponse = await TriggerRealignmentWithHttpInfoAsync(body, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -2235,7 +2235,7 @@ namespace cart.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CartTriggerRealignmentResponse)</returns>
-        public async System.Threading.Tasks.Task<cart.Client.ApiResponse<CartTriggerRealignmentResponse>> TriggerRealignmentWithHttpInfoAsync(CartTriggerRealignmentRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<cart.Client.ApiResponse<CartTriggerRealignmentResponse>> TriggerRealignmentWithHttpInfoAsync(CartTriggerRealignmentRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -2377,7 +2377,7 @@ namespace cart.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> UpdateCartAsync(CartUpdateCartRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Object> UpdateCartAsync(CartUpdateCartRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             cart.Client.ApiResponse<Object> localVarResponse = await UpdateCartWithHttpInfoAsync(body, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -2391,7 +2391,7 @@ namespace cart.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<cart.Client.ApiResponse<Object>> UpdateCartWithHttpInfoAsync(CartUpdateCartRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<cart.Client.ApiResponse<Object>> UpdateCartWithHttpInfoAsync(CartUpdateCartRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -2533,7 +2533,7 @@ namespace cart.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> UpdateProductsAsync(CartUpdateProductsRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Object> UpdateProductsAsync(CartUpdateProductsRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             cart.Client.ApiResponse<Object> localVarResponse = await UpdateProductsWithHttpInfoAsync(body, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -2547,7 +2547,7 @@ namespace cart.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<cart.Client.ApiResponse<Object>> UpdateProductsWithHttpInfoAsync(CartUpdateProductsRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<cart.Client.ApiResponse<Object>> UpdateProductsWithHttpInfoAsync(CartUpdateProductsRequest body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'body' is set
             if (body == null)

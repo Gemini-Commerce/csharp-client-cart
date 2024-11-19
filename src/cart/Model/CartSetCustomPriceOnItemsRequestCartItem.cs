@@ -49,6 +49,7 @@ namespace cart.Model
             this.CustomPriceRow = customPriceRow;
             this.CustomPriceUnit = customPriceUnit;
             this.DiscountPercentage = discountPercentage;
+            this.AdditionalProperties = new Dictionary<string, object>();
         }
 
         /// <summary>
@@ -88,6 +89,12 @@ namespace cart.Model
         public float DiscountPercentage { get; set; }
 
         /// <summary>
+        /// Gets or Sets additional properties
+        /// </summary>
+        [JsonExtensionData]
+        public IDictionary<string, object> AdditionalProperties { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -101,6 +108,7 @@ namespace cart.Model
             sb.Append("  CustomPriceRow: ").Append(CustomPriceRow).Append("\n");
             sb.Append("  CustomPriceUnit: ").Append(CustomPriceUnit).Append("\n");
             sb.Append("  DiscountPercentage: ").Append(DiscountPercentage).Append("\n");
+            sb.Append("  AdditionalProperties: ").Append(AdditionalProperties).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -119,7 +127,7 @@ namespace cart.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

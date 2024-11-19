@@ -1102,11 +1102,11 @@ components:
     cartCartData:
       example:
         subtotals:
-        - code: null
+        - code: UNKNOWN
           value:
             micros: 0
             units: units
-        - code: null
+        - code: UNKNOWN
           value:
             micros: 0
             units: units
@@ -1262,7 +1262,7 @@ components:
           addressLines:
           - addressLines
           - addressLines
-        currency: null
+        currency: XXX
         id: id
         billingAddress:
           postalCode: postalCode
@@ -1513,7 +1513,7 @@ components:
           basePrice:
             micros: 0
             units: units
-        status: null
+        status: UNKNOWN
         customer:
           firstname: firstname
           phoneNumber: phoneNumber
@@ -1774,7 +1774,7 @@ components:
       type: string
     cartCartSubtotal:
       example:
-        code: null
+        code: UNKNOWN
         value:
           micros: 0
           units: units
@@ -1784,6 +1784,7 @@ components:
         value:
           $ref: '#/components/schemas/cartMoney'
       type: object
+      x-golang-getsetvalue-exists: true
     cartCreateCartRequest:
       properties:
         tenantId:
@@ -2055,11 +2056,11 @@ components:
       example:
         cart:
           subtotals:
-          - code: null
+          - code: UNKNOWN
             value:
               micros: 0
               units: units
-          - code: null
+          - code: UNKNOWN
             value:
               micros: 0
               units: units
@@ -2215,7 +2216,7 @@ components:
             addressLines:
             - addressLines
             - addressLines
-          currency: null
+          currency: XXX
           id: id
           billingAddress:
             postalCode: postalCode
@@ -2466,7 +2467,7 @@ components:
             basePrice:
               micros: 0
               units: units
-          status: null
+          status: UNKNOWN
           customer:
             firstname: firstname
             phoneNumber: phoneNumber
@@ -2504,11 +2505,11 @@ components:
       example:
         cart:
           subtotals:
-          - code: null
+          - code: UNKNOWN
             value:
               micros: 0
               units: units
-          - code: null
+          - code: UNKNOWN
             value:
               micros: 0
               units: units
@@ -2664,7 +2665,7 @@ components:
             addressLines:
             - addressLines
             - addressLines
-          currency: null
+          currency: XXX
           id: id
           billingAddress:
             postalCode: postalCode
@@ -2915,7 +2916,7 @@ components:
             basePrice:
               micros: 0
               units: units
-          status: null
+          status: UNKNOWN
           customer:
             firstname: firstname
             phoneNumber: phoneNumber
@@ -2974,11 +2975,11 @@ components:
       example:
         carts:
         - subtotals:
-          - code: null
+          - code: UNKNOWN
             value:
               micros: 0
               units: units
-          - code: null
+          - code: UNKNOWN
             value:
               micros: 0
               units: units
@@ -3134,7 +3135,7 @@ components:
             addressLines:
             - addressLines
             - addressLines
-          currency: null
+          currency: XXX
           id: id
           billingAddress:
             postalCode: postalCode
@@ -3385,7 +3386,7 @@ components:
             basePrice:
               micros: 0
               units: units
-          status: null
+          status: UNKNOWN
           customer:
             firstname: firstname
             phoneNumber: phoneNumber
@@ -3403,11 +3404,11 @@ components:
             agentGrn: agentGrn
           updatedAt: 2000-01-23T04:56:07.000+00:00
         - subtotals:
-          - code: null
+          - code: UNKNOWN
             value:
               micros: 0
               units: units
-          - code: null
+          - code: UNKNOWN
             value:
               micros: 0
               units: units
@@ -3563,7 +3564,7 @@ components:
             addressLines:
             - addressLines
             - addressLines
-          currency: null
+          currency: XXX
           id: id
           billingAddress:
             postalCode: postalCode
@@ -3814,7 +3815,7 @@ components:
             basePrice:
               micros: 0
               units: units
-          status: null
+          status: UNKNOWN
           customer:
             firstname: firstname
             phoneNumber: phoneNumber
@@ -3964,6 +3965,7 @@ components:
             type: string
           type: object
       type: object
+      x-golang-getsetvalue-exists: true
     cartMergeCartsRequest:
       properties:
         tenantId:
@@ -4636,6 +4638,8 @@ components:
     protobufAny:
       additionalProperties:
         type: object
+      example:
+        '@type': '@type'
       properties:
         '@type':
           type: string
@@ -4653,6 +4657,12 @@ components:
       - NULL_VALUE
       type: string
     rpcStatus:
+      example:
+        code: 1
+        details:
+        - '@type': '@type'
+        - '@type': '@type'
+        message: message
       properties:
         code:
           format: int32
